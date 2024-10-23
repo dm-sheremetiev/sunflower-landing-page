@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack(config) {
+  webpack(config: { module: { rules: { test: RegExp; use: string[]; }[]; }; }) {
     config.module.rules.push({
       test: /\.svg$/,
       use: ["@svgr/webpack"],
