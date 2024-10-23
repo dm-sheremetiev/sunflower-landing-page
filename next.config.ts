@@ -1,7 +1,30 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
 
-const nextConfig: NextConfig = {
-  /* config options here */
+    return config;
+  },
+  compiler: {
+    styledComponents: false,
+  },
+  env: {
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+    NEXT_PUBLIC_INSTAGRAM_API_URL: process.env.NEXT_PUBLIC_INSTAGRAM_API_URL,
+    NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN:
+      process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*",
+      },
+    ],
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

@@ -8,9 +8,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xsm: "400px",
+        sm: "640px",
+        md: "768px",
+        l: "962px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        transparent: "transparent",
+        mainRed: "#F9462F",
+        mainGrey: "#9D9D9D",
+        mainBlack: "#313131",
+      },
+      fontFamily: {
+        gilroy: ["var(--font-gilroy)", "sans-serif"],
       },
     },
   },

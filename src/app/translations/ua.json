@@ -1,0 +1,13 @@
+{
+  "info": {
+    "showcase": "Вітрина",
+    "about-us": "Про нас",
+    "our-studios": "Наші студії",
+    "delivery": "Доставка",
+    "contacts": "Контакти"
+  },
+  "languages": {
+    "ua": "UA",
+    "en": "EN"
+  }
+}
