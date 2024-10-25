@@ -69,61 +69,6 @@ export const Navbar = ({ isMenuVisible, showMenu, hideMenu }: Props) => {
           changeLanguage={changeLanguage}
         />
       </div>
-
-      {/* <div className="flex items-center gap-8 ">
-          <a href="tel:+380669928410" className="hidden l:flex">
-            <Typography
-              variant="comforta-s-regular"
-              as="span"
-              className="text-silver-surfer transition-all duration-500 hover:text-fluorescent-red"
-            >
-              {t("info.number")}
-            </Typography>
-          </a>
-
-          <a
-            href="https://maps.app.goo.gl/AiXx4BQMP79iLTh67"
-            target="_blank"
-            rel="noreferrer"
-            className="hidden l:flex"
-          >
-            <Typography
-              variant="comforta-s-regular"
-              as="span"
-              className="text-silver-surfer transition-all duration-500 hover:text-fluorescent-red"
-            >
-              {t("info.address")}
-            </Typography>
-          </a>
-
-          <div className="flex items-center gap-7 l:gap-4">
-            <FavoritesLink
-              containerClassName="hidden l:flex"
-              className="h-[22px] w-[22px]"
-            />
-
-            <CartLink
-              containerClassName="hidden l:flex"
-              className="h-[22px] w-[22px]"
-            />
-
-            {isMenuVisible ? (
-              <CrossIcon
-                className="h-6 w-6 cursor-pointer l:hidden"
-                color="white"
-                onClick={hideMenu}
-              />
-            ) : (
-              <MenuIcon
-                className="h-8 w-8 cursor-pointer l:hidden"
-                color="white"
-                onClick={showMenu}
-              />
-            )}
-          </div>
-        </div> */}
-
-      {/* <NavList isMenuVisible={isMenuVisible} /> */}
     </div>
   );
 };

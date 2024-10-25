@@ -4,7 +4,11 @@
     "about-us": "About Us",
     "our-studios": "Our Studios",
     "delivery": "Delivery",
-    "contacts": "Contacts"
+    "contacts": "Contacts",
+    "order-bouquet": "Order a bouquet"
+  },
+  "hero": {
+    "history": "Here starts your flower tale"
   },
   "languages": {
     "ua": "UA",
