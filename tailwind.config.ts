@@ -22,6 +22,7 @@ const config: Config = {
         mainRed: "#F9462F",
         mainGrey: "#9D9D9D",
         mainBlack: "#313131",
+        mainPink: "#FFE4EE",
       },
       fontFamily: {
         gilroy: ["var(--font-gilroy)", "sans-serif"],

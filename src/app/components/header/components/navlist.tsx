@@ -63,7 +63,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
       <div
         className={cn("w-full transition-all md:hidden h-fit mt-0", {
           "opacity-1 translate-x-0 mt-10": isMenuVisible,
-          "opacity-0 h-0": !isMenuVisible,
+          "opacity-0 h-0 -z-[99] pointer-events-none": !isMenuVisible,
         })}
       >
         <ul className="flex self-start flex-col items-start gap-5 md:flex">

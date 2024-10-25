@@ -4,7 +4,11 @@
     "about-us": "Про нас",
     "our-studios": "Наші студії",
     "delivery": "Доставка",
-    "contacts": "Контакти"
+    "contacts": "Контакти",
+    "order-bouquet": "Замовити букет"
+  },
+  "hero":{
+    "history": "Тут починається твоя квіткова історія"
   },
   "languages": {
     "ua": "UA",

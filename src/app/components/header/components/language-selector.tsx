@@ -16,9 +16,10 @@ export const LanguageSelector = ({ changeLanguage }: Props) => {
           className={classNames(
             "text-mainGrey text-[14px] md:text-[24px] md:leading-[30px] leading-[16px]",
             {
-              "text-mainBlack text-[14px]": language === "ua",
+              "text-[14px]": language === "ua",
             }
           )}
+          style={{ color: language === "ua" ? "#313131" : "#9D9D9D" }}
         >
           {t("languages.ua")}
         </p>
@@ -31,9 +32,10 @@ export const LanguageSelector = ({ changeLanguage }: Props) => {
           className={classNames(
             "text-mainGrey text-[14px] md:text-[24px] md:leading-[30px] leading-[16px]",
             {
-              "text-mainBlack text-[14px]": language === "en",
+              "text-[14px]": language === "en",
             }
           )}
+          style={{ color: language === "en" ? "#313131" : "#9D9D9D" }}
         >
           {t("languages.en")}
         </p>
