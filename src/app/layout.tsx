@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${gilroy.variable} font-gilroy`}>
+      <body className={`${gilroy.variable} font-gilroy bg-white`}>
         <AppProvider>
           <Header />
 
