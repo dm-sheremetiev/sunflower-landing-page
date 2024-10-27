@@ -1,12 +1,6 @@
-import { useTranslation } from "react-i18next";
-
 import CurvedText from "@/app/assets/img/svg/curved-text.svg";
 
-interface Props {}
-
-export const RotatingButton = ({}: Props) => {
-  const { t } = useTranslation();
-
+export const RotatingButton = () => {
   return (
     <a
       href="https://www.instagram.com/sun.flower.kyiv"
