@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import { useTranslation } from "react-i18next";
 
 import Line from "@/app/assets/img/svg/line.svg";

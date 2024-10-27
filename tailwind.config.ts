@@ -12,10 +12,9 @@ const config: Config = {
         xsm: "400px",
         sm: "640px",
         md: "768px",
-        l: "962px",
         lg: "1024px",
         xl: "1280px",
-        "2xl": "1536px",
+        "2xl": "5836px",
       },
       colors: {
         transparent: "transparent",

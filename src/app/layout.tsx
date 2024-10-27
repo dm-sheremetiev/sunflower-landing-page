@@ -5,9 +5,33 @@ import { AppProvider } from "./providers/AppProvider";
 import { Header } from "./components/header/header";
 
 const gilroy = localFont({
-  src: "./assets/fonts/Gilroy-Regular.ttf",
+  src: [
+    {
+      path: "./assets/fonts/Gilroy-Light.ttf",
+      weight: "300",
+    },
+    {
+      path: "./assets/fonts/Gilroy-Regular.ttf",
+      weight: "400",
+    },
+    {
+      path: "./assets/fonts/Gilroy-Medium.ttf",
+      weight: "500",
+    },
+    {
+      path: "./assets/fonts/Gilroy-Semibold.ttf",
+      weight: "600",
+    },
+    {
+      path: "./assets/fonts/Gilroy-Bold.ttf",
+      weight: "700",
+    },
+    {
+      path: "./assets/fonts/Gilroy-ExtraBold.ttf",
+      weight: "900",
+    },
+  ],
   variable: "--font-gilroy",
-  weight: "100 300 400 500 600 900",
 });
 
 export const metadata: Metadata = {

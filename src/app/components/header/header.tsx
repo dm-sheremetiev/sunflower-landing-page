@@ -12,7 +12,7 @@ export const Header = () => {
 
   const [isMenuVisible, showMenu, hideMenu] = useModal();
 
-  const l = useMediaQuery(BREAKPOINTS.l);
+  const l = useMediaQuery(BREAKPOINTS.lg);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +36,7 @@ export const Header = () => {
   return (
     <header
       className={classNames(
-        "fixed z-50 flex w-full justify-center bg-transparent bg-white px-[15px] py-5 transition-transform duration-700 sm:px-10 md:px-[60px]",
+        "fixed z-50 flex w-full justify-center bg-transparent bg-white px-[15px] py-5 transition-transform duration-700 sm:px-10 md:px-[45px] xl:px-[60px]",
         {
           "-translate-y-full": isHeaderHidden && !isMenuVisible,
           "h-full": isMenuVisible && !l,

@@ -17,7 +17,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
         <li onClick={hideMenu}>
           <a
             href="#showcase"
-            className="text-black text-[16px] l:text-[25px] hover:text-mainRed transition-all"
+            className="text-black text-[16px] lg:text-[25px] hover:text-mainRed transition-all"
           >
             {t("info.showcase")}
           </a>
@@ -26,7 +26,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
         <li onClick={hideMenu}>
           <a
             href="#about-us"
-            className="text-black text-[16px] l:text-[25px] hover:text-mainRed transition-all"
+            className="text-black text-[16px] lg:text-[25px] hover:text-mainRed transition-all"
           >
             {t("info.about-us")}
           </a>
@@ -35,7 +35,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
         <li onClick={hideMenu}>
           <a
             href="#our-studios"
-            className="text-black text-[16px] l:text-[25px] hover:text-mainRed transition-all"
+            className="text-black text-[16px] lg:text-[25px] hover:text-mainRed transition-all"
           >
             {t("info.our-studios")}
           </a>
@@ -44,7 +44,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
         <li onClick={hideMenu}>
           <a
             href="#delivery"
-            className="text-black text-[16px] l:text-[25px] hover:text-mainRed transition-all"
+            className="text-black text-[16px] lg:text-[25px] hover:text-mainRed transition-all"
           >
             {t("info.delivery")}
           </a>
@@ -53,7 +53,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
         <li onClick={hideMenu}>
           <a
             href="#contacts"
-            className="text-black text-[16px] l:text-[25px] hover:text-mainRed transition-all"
+            className="text-black text-[16px] lg:text-[25px] hover:text-mainRed transition-all"
           >
             {t("info.contacts")}
           </a>

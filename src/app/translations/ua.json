@@ -7,8 +7,13 @@
     "contacts": "Контакти",
     "order-bouquet": "Замовити букет"
   },
-  "hero":{
+  "hero": {
     "history": "Тут починається твоя квіткова історія"
+  },
+  "instagram": {
+    "instagram-showcase": "INSTAGRAM ВІТРИНА",
+    "sunflower": "@sun.flower.kyiv",
+    "view-all": "Переглянути все"
   },
   "languages": {
     "ua": "UA",

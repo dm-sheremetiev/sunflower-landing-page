@@ -23,3 +23,13 @@ body {
 .blurred-backdrop {
   backdrop-filter: blur(15px)
 }
+
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotation {
+  animation: rotation 10s linear infinite;
+}

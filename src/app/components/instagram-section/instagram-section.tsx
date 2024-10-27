@@ -1,0 +1,90 @@
+"use client";
+
+import { useTranslation } from "react-i18next";
+
+import { useEffect, useState } from "react";
+// import { InstagramItem } from "./ui/instagram-item";
+import { H2 } from "@/app/ui/h2/h2";
+import { InstagramItem } from "./ui/instagram-item";
+import { RotatingButton } from "../roatating-button/rotating-button";
+
+export interface InstagramPost {
+  id: string;
+  media_type: string;
+  media_url: string;
+  thumbnail_url?: string;
+  permalink: string;
+  caption?: string;
+}
+
+export const InstagramSection = () => {
+  const { t } = useTranslation();
+
+  const [posts, setPosts] = useState<InstagramPost[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    async function getInstagramMedia() {
+      setIsLoading(true);
+
+      const mediaDetails: InstagramPost[] = await fetch("/api/instagram").then(
+        (res) => res.json()
+      );
+
+      // const token = process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN;
+
+      // const mediaResponse = await fetch(
+      //   `https://graph.instagram.com/v21.0/me?fields=media&access_token=${token}`
+      // );
+      // const mediaData = await mediaResponse.json();
+
+      // const mediaItems = mediaData.media?.data.slice(0, 8);
+
+      // if (!Array.isArray(mediaItems)) return;
+
+      // const mediaDetailsPromises = mediaItems.map(async (media) => {
+      //   const mediaDetailsResponse = await fetch(
+      //     `https://graph.instagram.com/${media.id}?fields=id,media_type,media_url,thumbnail_url,permalink,caption&access_token=${token}`
+      //   );
+      //   return await mediaDetailsResponse.json();
+      // });
+
+      // const mediaDetails: InstagramPost[] = await Promise.all(
+      //   mediaDetailsPromises
+      // );
+      setPosts(mediaDetails);
+    }
+
+    getInstagramMedia()
+      .catch((error) => {
+        console.error("Error fetching Instagram media:", error);
+      })
+      .finally(() => setIsLoading(false));
+  }, []);
+
+  return (
+    <section className="xl:container w-full mt-[100px] sm:mt-[150px] md:mt-[200px] px-[15px] md:px-[45px] xl:px-[0px]">
+      {isLoading && "Loading"}
+
+      <div className="flex xsm:items-center gap-3 xsm:gap-5 justify-between md:justify-normal xsm:flex-row flex-col">
+        <H2>{t("instagram.instagram-showcase")}</H2>
+
+        <a href="https://www.instagram.com/sun.flower.kyiv" target="_blank">
+          <p className="text-mainRed text-[13px] leading-[16px] sm:text-[16px] sm:leading-[17.6px] md:text-[25px] md:leading-[30px]">
+            {t("instagram.sunflower")}
+          </p>
+        </a>
+      </div>
+
+      <ul className="mt-5 xsm:mt-10 sm:mt-[50px] md:mt-[60px] grid w-full grid-cols-2 gap-[15px] sm:gap-5 sm:grid-cols-3 xl:grid-cols-4">
+        {posts.map((post) => (
+          <InstagramItem key={post.id} post={post} />
+        ))}
+      </ul>
+
+      <div className="mb-[100px] mt-[30px] sm:mt-[40px] sm:mb-[150px] md:mt-[90px] md:mb-[200px] w-full flex justify-center">
+        <RotatingButton />
+      </div>
+    </section>
+  );
+};

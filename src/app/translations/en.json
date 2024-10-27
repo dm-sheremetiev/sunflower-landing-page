@@ -10,6 +10,11 @@
   "hero": {
     "history": "Here starts your flower tale"
   },
+  "instagram": {
+    "instagram-showcase": "INSTAGRAM SHOWCASE",
+    "sunflower": "@sun.flower.kyiv",
+    "view-all": "View all"
+  },
   "languages": {
     "ua": "UA",
     "en": "EN"
