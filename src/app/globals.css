@@ -35,5 +35,5 @@ body {
 }
 
 .animate-rotation {
-  animation: rotation 10s linear infinite;
+  animation: rotation 15s linear infinite;
 }
