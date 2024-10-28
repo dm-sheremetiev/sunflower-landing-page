@@ -15,6 +15,13 @@
     "sunflower": "@sun.flower.kyiv",
     "view-all": "View all"
   },
+  "about-us": {
+    "about-us": "ABOUT US",
+    "description": "<strong>Sunflower</strong> is a team of professionals who create unique floral arrangements with passion and creativity for your special occasions. We care about each customer, offering a personalized approach and top-quality service.",
+    "description-2": "We work directly with flower suppliers from abroad, allowing us to guarantee <strong>the best prices</strong> and excellent quality. Our priority is to provide high-level customer service and create a comfortable work environment for our team, contributing to the overall success of the company.",
+    "with-love": "With love,",
+    "team-sunflower": "Sunflower Team"
+  },
   "languages": {
     "ua": "UA",
     "en": "EN"
