@@ -64,7 +64,7 @@ export const DeliveryConditions = () => {
         </div>
       </div>
 
-      <div className="mx-auto mt-[40px] md:mt-[50px] lg:mt-[60px]">
+      <div className="mx-auto md:mx-0 mt-[40px] md:mt-[50px] lg:mt-[60px] md:self-end">
         <Button isRed />
       </div>
     </section>
