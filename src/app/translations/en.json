@@ -42,6 +42,16 @@
     "fayna-town": "Fayna Town Residential Complex",
     "fayna-location": "*The studio is located in the Fayna Town Residential Complex (10 minutes from Nyvky Metro Station).<br />Access to the territory is possible through either of the two barriers and only after your number is added to the security list (if necessary, we can prepare the permit in advance).<br />There are not enough parking spaces in the residential complex itself, so it's better to park on Salytna Street or in the ”informal” parking area inside the complex, which is located behind the football and tennis fields."
   },
+  "delivery-conditions": {
+    "delivery-conditions": "DELIVERY CONDITIONS",
+    "how-we-deliver": "We deliver using our own couriers, who carefully bring your orders at the scheduled time. In case our couriers are busy or for urgent orders, we can arrange delivery via taxi at their rates to ensure you receive your bouquet as quickly as possible.",
+    "in-residental-complex": "Delivery within the \"French Quarter 2\" and \"Fayna Town\" residential complexes:",
+    "50-uah": "50 UAH",
+    "urgent-taxi": "Delivery within Kyiv:",
+    "by-taxi-rate": "at taxi rates depending on the branch",
+    "region": "Delivery in the region and suburban areas",
+    "by-taxi-rate-2": "at taxi rates"
+  },
   "languages": {
     "ua": "UA",
     "en": "EN"
