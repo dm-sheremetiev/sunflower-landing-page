@@ -4,7 +4,6 @@ import { H2 } from "@/app/ui/h2/h2";
 import { Trans, useTranslation } from "react-i18next";
 import { AboutUsItem } from "./ui/about-us-item";
 import { aboutUsData } from "./constants/data";
-import { RotatingButton } from "../roatating-button/rotating-button";
 import { Button } from "@/app/ui/button/button";
 
 export const AboutUs = () => {

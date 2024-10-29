@@ -61,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${cassandra.variable} ${gilroy.variable} font-gilroy bg-white`}
+        className={`${cassandra.variable} ${gilroy.variable} font-gilroy bg-white text-mainBlack`}
       >
         <AppProvider>
           <Header />

@@ -31,6 +31,17 @@
     "care": "Care and Reliability",
     "choice": "Unlimited Choice"
   },
+  "our-studios": {
+    "our-studios": "OUR STUDIOS",
+    "be-happy": "We will be happy to welcome you to our 2 studios in Kyiv!",
+    "sunflower-predslavynska": "“SUNFLOWER” Predslavynska 55",
+    "french-quarter": "French Quarter 2 Residential Complex",
+    "mon-sun": "Mon-Sun",
+    "french-location": "*The studio is located in the French Quarter 2 Residential Complex (Lybidska Metro Station).<br />Access is possible from Makkeina, Vasylkivska, and Predslavynska streets. Usually, cars are allowed on the territory, but if needed, we can open the barrier for you.<br />There are not enough parking spaces in the residential complex itself, so it’s better to park on Makkeina or Predslavynska streets. We can also bring you the composition by prior arrangement.",
+    "sunflower-fayna": "“SUNFLOWER” Salytna 2b (2k8)",
+    "fayna-town": "Fayna Town Residential Complex",
+    "fayna-location": "*The studio is located in the Fayna Town Residential Complex (10 minutes from Nyvky Metro Station).<br />Access to the territory is possible through either of the two barriers and only after your number is added to the security list (if necessary, we can prepare the permit in advance).<br />There are not enough parking spaces in the residential complex itself, so it's better to park on Salytna Street or in the ”informal” parking area inside the complex, which is located behind the football and tennis fields."
+  },
   "languages": {
     "ua": "UA",
     "en": "EN"
