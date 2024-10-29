@@ -1,4 +1,5 @@
 import { AboutUs } from "./components/about-us/about-us";
+import { DeliveryConditions } from "./components/delivery-conditions/delivery-conditions";
 import { HeroSection } from "./components/hero-section/hero-section";
 import { InstagramSection } from "./components/instagram-section/instagram-section";
 import { OurStudios } from "./components/our-studios/our-studios";
@@ -13,6 +14,8 @@ export default function Home() {
       <AboutUs />
 
       <OurStudios />
+
+      <DeliveryConditions />
     </div>
   );
 }
