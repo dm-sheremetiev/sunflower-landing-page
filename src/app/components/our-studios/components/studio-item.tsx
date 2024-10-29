@@ -9,6 +9,7 @@ import FaynaFacade from "@/app/assets/img/fayna-facade.jpeg";
 import FrenchMap from "@/app/assets/img/french-map.png";
 import FaynaMap from "@/app/assets/img/fayna-map.png";
 import Image from "next/image";
+import classNames from "classnames";
 
 interface Props {
   title: string;
@@ -17,6 +18,7 @@ interface Props {
   number: string;
   description: string;
   isFrench?: boolean;
+  reversed?: boolean;
 }
 
 export const StudioItem = ({
@@ -26,12 +28,18 @@ export const StudioItem = ({
   number,
   description,
   isFrench,
+  reversed,
 }: Props) => {
   const { t } = useTranslation();
 
   return (
     <li className="flex flex-col gap-[15px] lg:gap-[20px] lg:grid lg:grid-cols-2">
-      <div>
+      <div
+        className={classNames("", {
+          "lg:order-2": reversed,
+          "lg:order-1": !reversed,
+        })}
+      >
         <a href={locationLink} target="_blank">
           <p className="text-[18px] italic text-mainBlack mb-5 md:text-[22px] lg:text-[35px] hover:text-mainRed transition-all">
             {title}
@@ -81,19 +89,18 @@ export const StudioItem = ({
 
         <div className="mt-5 w-full hover:shadow-md transition-all">
           <a href={locationLink} target="_blank">
-            <Image
-              src={isFrench ? FrenchMap : FaynaMap}
-              alt="map"
-            />
+            <Image src={isFrench ? FrenchMap : FaynaMap} alt="map" />
           </a>
         </div>
       </div>
 
-      <div className="w-full">
-        <Image
-          src={isFrench ? FrenchFacade : FaynaFacade}
-          alt="building"
-        />
+      <div
+        className={classNames("w-full", {
+          "lg:order-1": reversed,
+          "lg:order-2": !reversed,
+        })}
+      >
+        <Image src={isFrench ? FrenchFacade : FaynaFacade} alt="building" />
       </div>
     </li>
   );

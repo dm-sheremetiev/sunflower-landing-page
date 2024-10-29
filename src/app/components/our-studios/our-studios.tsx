@@ -36,6 +36,7 @@ export const OurStudios = () => {
           number="+380 63 677 89 96"
           description={t("our-studios.fayna-location")}
           locationLink="https://maps.app.goo.gl/LF5ZPdKcrJA2K2k88"
+          reversed
         />
       </ul>
     </section>
