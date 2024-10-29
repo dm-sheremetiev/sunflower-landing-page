@@ -1,3 +1,4 @@
+import { AboutUs } from "./components/about-us/about-us";
 import { HeroSection } from "./components/hero-section/hero-section";
 import { InstagramSection } from "./components/instagram-section/instagram-section";
 
@@ -7,6 +8,8 @@ export default function Home() {
       <HeroSection />
 
       <InstagramSection />
+
+      <AboutUs />
     </div>
   );
 }
