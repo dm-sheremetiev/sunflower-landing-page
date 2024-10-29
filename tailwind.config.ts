@@ -25,6 +25,7 @@ const config: Config = {
       },
       fontFamily: {
         gilroy: ["var(--font-gilroy)", "sans-serif"],
+        cassandra: ["var(--font-cassandra)", "sans-serif"],
       },
     },
   },

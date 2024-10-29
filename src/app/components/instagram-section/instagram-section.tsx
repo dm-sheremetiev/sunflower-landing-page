@@ -3,7 +3,6 @@
 import { useTranslation } from "react-i18next";
 
 import { useEffect, useState } from "react";
-// import { InstagramItem } from "./ui/instagram-item";
 import { H2 } from "@/app/ui/h2/h2";
 import { InstagramItem } from "./ui/instagram-item";
 import { RotatingButton } from "../roatating-button/rotating-button";
@@ -21,12 +20,9 @@ export const InstagramSection = () => {
   const { t } = useTranslation();
 
   const [posts, setPosts] = useState<InstagramPost[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function getInstagramMedia() {
-      setIsLoading(true);
-
       const mediaDetails: InstagramPost[] = await fetch("/api/instagram").then(
         (res) => res.json()
       );
@@ -55,18 +51,14 @@ export const InstagramSection = () => {
       setPosts(mediaDetails);
     }
 
-    getInstagramMedia()
-      .catch((error) => {
-        console.error("Error fetching Instagram media:", error);
-      })
-      .finally(() => setIsLoading(false));
+    getInstagramMedia().catch((error) => {
+      console.error("Error fetching Instagram media:", error);
+    });
   }, []);
 
   return (
     <section className="xl:container w-full mt-[100px] sm:mt-[150px] md:mt-[200px] px-[15px] md:px-[45px] xl:px-[0px]">
-      {isLoading && "Loading"}
-
-      <div className="flex xsm:items-center gap-3 xsm:gap-5 justify-between md:justify-normal xsm:flex-row flex-col">
+      <div className="flex xsm:items-center gap-3 xsm:gap-5 justify-between md:justify-normal xsm:flex-row flex-col" id="showcase">
         <H2>{t("instagram.instagram-showcase")}</H2>
 
         <a href="https://www.instagram.com/sun.flower.kyiv" target="_blank">

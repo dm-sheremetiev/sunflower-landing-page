@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import MainLogo from "@/app/assets/img/svg/mainPinkLogo.svg";
 import { Button } from "@/app/ui/button/button";
 
-
 export const HeroSection = () => {
   const { t } = useTranslation();
 
@@ -19,7 +18,7 @@ export const HeroSection = () => {
         </h2>
 
         <div className="mt-[174px]">
-          <Button size="large" />
+          <Button />
         </div>
       </div>
     </div>
