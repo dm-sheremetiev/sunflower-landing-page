@@ -35,12 +35,12 @@ const HeroSection = dynamic(
     ssr: false,
   }
 );
-// const InstagramSection = dynamic(
-//   () => import("@/app/components/instagram-section/instagram-section"),
-//   {
-//     ssr: false,
-//   }
-// );
+const InstagramSection = dynamic(
+  () => import("@/app/components/instagram-section/instagram-section"),
+  {
+    ssr: false,
+  }
+);
 const OurStudios = dynamic(
   () => import("@/app/components/our-studios/our-studios"),
   {
@@ -56,7 +56,7 @@ export default function Home() {
 
         <HeroSection />
 
-        {/* <InstagramSection /> */}
+        <InstagramSection />
 
         <AboutUs />
 
