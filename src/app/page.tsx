@@ -7,7 +7,7 @@ import { OurStudios } from "./components/our-studios/our-studios";
 
 export default function Home() {
   return (
-    <div className="w-full h-full flex flex-col items-center">
+    <main className="w-full h-full flex flex-col items-center">
       <HeroSection />
 
       <InstagramSection />
@@ -19,6 +19,6 @@ export default function Home() {
       <DeliveryConditions />
 
       <ContactsSection />
-    </div>
+    </main>
   );
 }

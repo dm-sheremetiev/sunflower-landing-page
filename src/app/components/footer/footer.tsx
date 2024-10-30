@@ -4,15 +4,20 @@ import { useTranslation } from "react-i18next";
 
 import LongLogo from "@/app/assets/img/svg/long-logo.svg";
 import Link from "next/link";
+import { sendGAEvent } from "@next/third-parties/google";
 
 export const Footer = () => {
   const { t } = useTranslation();
+
+  const onClick = () => {
+    sendGAEvent("event", "nav_link_click");
+  };
 
   return (
     <footer className="w-full bg-mainPink flex justify-center">
       <div className="xl:container w-full px-[15px] md:px-[45px] xl:px-[0px] flex flex-col gap-10 md:gap-[50px] lg:gap-[60px] items-center py-[30px] md:py-[50px] lg:py-[70px]">
         <ul className="items-center gap-5 md:gap-[30px] lg:gap-[95px] flex flex-col md:flex-row">
-          <li>
+          <li onClick={onClick}>
             <a
               href="#showcase"
               className="text-black text-[14px] md:text-[16px] lg:text-[25px] hover:text-mainRed transition-all"
@@ -21,7 +26,7 @@ export const Footer = () => {
             </a>
           </li>
 
-          <li>
+          <li onClick={onClick}>
             <a
               href="#about-us"
               className="text-black text-[14px] md:text-[16px] lg:text-[25px] hover:text-mainRed transition-all"
@@ -30,7 +35,7 @@ export const Footer = () => {
             </a>
           </li>
 
-          <li>
+          <li onClick={onClick}>
             <a
               href="#our-studios"
               className="text-black text-[14px] md:text-[16px] lg:text-[25px] hover:text-mainRed transition-all"
@@ -39,7 +44,7 @@ export const Footer = () => {
             </a>
           </li>
 
-          <li>
+          <li onClick={onClick}>
             <a
               href="#delivery"
               className="text-black text-[14px] md:text-[16px] lg:text-[25px] hover:text-mainRed transition-all"
@@ -48,7 +53,7 @@ export const Footer = () => {
             </a>
           </li>
 
-          <li>
+          <li onClick={onClick}>
             <a
               href="#contacts"
               className="text-black text-[14px] md:text-[16px] lg:text-[25px] hover:text-mainRed transition-all"

@@ -6,14 +6,37 @@ import { useTranslation } from "react-i18next";
 import DeliveryConditionsPhoto from "@/app/assets/img/delivery-conditions.png";
 import Logo from "@/app/assets/img/svg/logo-icon.svg";
 import { Button } from "@/app/ui/button/button";
+import { useInView } from "react-intersection-observer";
+import { useAnimation, motion } from "framer-motion";
+import { useEffect } from "react";
+import { fadeInUp } from "@/app/utils/animations";
 
 export const DeliveryConditions = () => {
   const { t } = useTranslation();
 
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [inView, controls]);
+
   return (
-    <section
+    <motion.section
       className="xl:container w-full px-[15px] md:px-[45px] xl:px-[0px] mb-[100px] md:mb-[150px] lg:mb-[200px] flex flex-col"
       id="delivery"
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={fadeInUp}
     >
       <H2 className="mb-[40px] md:mb-[50px] lg:mb-[60px] text-center md:text-start">
         {t("delivery-conditions.delivery-conditions")}
@@ -68,8 +91,8 @@ export const DeliveryConditions = () => {
       </div>
 
       <div className="mx-auto md:mx-0 mt-[40px] md:mt-[50px] lg:mt-[60px] md:self-end">
-        <Button isRed />
+        <Button isRed location="delivery_conditions" />
       </div>
-    </section>
+    </motion.section>
   );
 };

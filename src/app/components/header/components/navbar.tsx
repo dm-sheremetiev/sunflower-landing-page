@@ -8,6 +8,7 @@ import Link from "next/link";
 import { NavList } from "./navlist";
 import i18n from "@/app/i18n/i18n";
 import { LanguageSelector } from "./language-selector";
+import { sendGAEvent } from "@next/third-parties/google";
 
 interface Props {
   isMenuVisible: boolean;
@@ -40,7 +41,10 @@ export const Navbar = ({ isMenuVisible, showMenu, hideMenu }: Props) => {
 
         <div className="flex items-center gap-[30px]">
           <div className="cursor-pointer">
-            <a href="tel:+380989797617">
+            <a
+              href="tel:+380989797617"
+              onClick={() => sendGAEvent("event", "main_phone_click")}
+            >
               <PhoneIcon />
             </a>
           </div>
