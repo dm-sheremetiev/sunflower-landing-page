@@ -10,11 +10,13 @@ import FrenchMap from "@/app/assets/img/french-map.png";
 import FaynaMap from "@/app/assets/img/fayna-map.png";
 import Image from "next/image";
 import classNames from "classnames";
+import { sendGAEvent } from "@next/third-parties/google";
 
 interface Props {
   title: string;
   location: string;
   locationLink: string;
+  locationForGA: string;
   number: string;
   description: string;
   isFrench?: boolean;
@@ -29,6 +31,7 @@ export const StudioItem = ({
   description,
   isFrench,
   reversed,
+  locationForGA,
 }: Props) => {
   const { t } = useTranslation();
 
@@ -40,7 +43,12 @@ export const StudioItem = ({
           "lg:order-1": !reversed,
         })}
       >
-        <a href={locationLink} target="_blank" className="max-w-fit">
+        <a
+          href={locationLink}
+          target="_blank"
+          className="max-w-fit"
+          onClick={() => sendGAEvent("event", `maps_click_${locationForGA}`)}
+        >
           <p className="text-[18px] italic text-mainBlack mb-5 md:text-[22px] lg:text-[35px] hover:text-mainRed transition-all">
             {title}
           </p>
@@ -69,6 +77,7 @@ export const StudioItem = ({
 
           <a
             href={`tel:${number}`}
+            onClick={() => sendGAEvent("event", `phone_click_${locationForGA}`)}
             className="flex flex-row gap-[10px] items-center max-w-fit"
           >
             <div className="w-5 h-5 md:w-6 md:h-6">
@@ -88,7 +97,11 @@ export const StudioItem = ({
         </Trans>
 
         <div className="mt-5 w-full hover:shadow-md transition-all">
-          <a href={locationLink} target="_blank">
+          <a
+            href={locationLink}
+            target="_blank"
+            onClick={() => sendGAEvent("event", `maps_click_${locationForGA}`)}
+          >
             <Image src={isFrench ? FrenchMap : FaynaMap} alt="map" />
           </a>
         </div>

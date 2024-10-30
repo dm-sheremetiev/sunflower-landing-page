@@ -1,3 +1,4 @@
+import { sendGAEvent } from "@next/third-parties/google";
 import classNames from "classnames";
 import { useTranslation } from "react-i18next";
 
@@ -11,7 +12,12 @@ export const LanguageSelector = ({ changeLanguage }: Props) => {
 
   return (
     <div className="flex gap-2 items-center">
-      <button onClick={() => changeLanguage("ua")}>
+      <button
+        onClick={() => {
+          changeLanguage("ua");
+          sendGAEvent("event", "ua_change_language_click");
+        }}
+      >
         <p
           className={classNames(
             "text-mainGrey text-[14px] md:text-[24px] md:leading-[30px] leading-[16px]",
@@ -27,7 +33,12 @@ export const LanguageSelector = ({ changeLanguage }: Props) => {
 
       <div className="h-[17px] md:h-[24px] w-[1.5px] bg-[#313131]"></div>
 
-      <button onClick={() => changeLanguage("en")}>
+      <button
+        onClick={() => {
+          changeLanguage("en");
+          sendGAEvent("event", "eng_change_language_click");
+        }}
+      >
         <p
           className={classNames(
             "text-mainGrey text-[14px] md:text-[24px] md:leading-[30px] leading-[16px]",

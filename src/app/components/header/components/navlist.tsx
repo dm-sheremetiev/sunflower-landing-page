@@ -2,6 +2,8 @@ import { LanguageSelector } from "./language-selector";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/app/utils/styles";
 
+import { sendGAEvent } from "@next/third-parties/google";
+
 interface Props {
   isMenuVisible: boolean;
   hideMenu: () => void;
@@ -11,10 +13,16 @@ interface Props {
 export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
   const { t } = useTranslation();
 
+  const onClick = () => {
+    hideMenu();
+
+    sendGAEvent("event", "nav_link_click");
+  };
+
   return (
     <nav className="relative">
       <ul className="hidden items-center gap-5 xl:gap-[95px] md:flex">
-        <li onClick={hideMenu}>
+        <li onClick={onClick}>
           <a
             href="#showcase"
             className="text-black text-[16px] lg:text-[25px] hover:text-mainRed transition-all"
@@ -23,7 +31,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
           </a>
         </li>
 
-        <li onClick={hideMenu}>
+        <li onClick={onClick}>
           <a
             href="#about-us"
             className="text-black text-[16px] lg:text-[25px] hover:text-mainRed transition-all"
@@ -32,7 +40,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
           </a>
         </li>
 
-        <li onClick={hideMenu}>
+        <li onClick={onClick}>
           <a
             href="#our-studios"
             className="text-black text-[16px] lg:text-[25px] hover:text-mainRed transition-all"
@@ -41,7 +49,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
           </a>
         </li>
 
-        <li onClick={hideMenu}>
+        <li onClick={onClick}>
           <a
             href="#delivery"
             className="text-black text-[16px] lg:text-[25px] hover:text-mainRed transition-all"
@@ -50,7 +58,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
           </a>
         </li>
 
-        <li onClick={hideMenu}>
+        <li onClick={onClick}>
           <a
             href="#contacts"
             className="text-black text-[16px] lg:text-[25px] hover:text-mainRed transition-all"
@@ -67,7 +75,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
         })}
       >
         <ul className="flex self-start flex-col items-start gap-5 md:flex">
-          <li onClick={hideMenu}>
+          <li onClick={onClick}>
             <a
               href="#showcase"
               className="text-black text-[16px] hover:text-mainRed transition-all"
@@ -76,7 +84,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
             </a>
           </li>
 
-          <li onClick={hideMenu}>
+          <li onClick={onClick}>
             <a
               href="#about-us"
               className="text-black text-[16px] hover:text-mainRed transition-all"
@@ -85,7 +93,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
             </a>
           </li>
 
-          <li onClick={hideMenu}>
+          <li onClick={onClick}>
             <a
               href="#our-studios"
               className="text-black text-[16px] hover:text-mainRed transition-all"
@@ -94,7 +102,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
             </a>
           </li>
 
-          <li onClick={hideMenu}>
+          <li onClick={onClick}>
             <a
               href="#delivery"
               className="text-black text-[16px] hover:text-mainRed transition-all"
@@ -103,7 +111,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
             </a>
           </li>
 
-          <li onClick={hideMenu}>
+          <li onClick={onClick}>
             <a
               href="#contacts"
               className="text-black text-[16px] hover:text-mainRed transition-all"

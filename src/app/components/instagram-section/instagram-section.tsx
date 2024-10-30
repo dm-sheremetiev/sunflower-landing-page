@@ -6,6 +6,9 @@ import { useEffect, useState } from "react";
 import { H2 } from "@/app/ui/h2/h2";
 import { InstagramItem } from "./ui/instagram-item";
 import { RotatingButton } from "../roatating-button/rotating-button";
+import { useInView } from "react-intersection-observer";
+import { useAnimation, motion } from "framer-motion";
+import { fadeInUp } from "@/app/utils/animations";
 
 export interface InstagramPost {
   id: string;
@@ -56,9 +59,27 @@ export const InstagramSection = () => {
     });
   }, []);
 
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
   return (
     <section className="xl:container w-full mt-[100px] sm:mt-[150px] md:mt-[200px] px-[15px] md:px-[45px] xl:px-[0px]">
-      <div className="flex xsm:items-center gap-3 xsm:gap-5 justify-between md:justify-normal xsm:flex-row flex-col" id="showcase">
+      <div
+        className="flex xsm:items-center gap-3 xsm:gap-5 justify-between md:justify-normal xsm:flex-row flex-col"
+        id="showcase"
+      >
         <H2>{t("instagram.instagram-showcase")}</H2>
 
         <a href="https://www.instagram.com/sun.flower.kyiv" target="_blank">
@@ -68,11 +89,17 @@ export const InstagramSection = () => {
         </a>
       </div>
 
-      <ul className="mt-5 xsm:mt-10 sm:mt-[50px] md:mt-[60px] grid w-full grid-cols-2 gap-[15px] sm:gap-5 sm:grid-cols-3 xl:grid-cols-4">
+      <motion.ul
+        ref={ref}
+        className="mt-5 xsm:mt-10 sm:mt-[50px] md:mt-[60px] grid w-full grid-cols-2 gap-[15px] sm:gap-5 sm:grid-cols-3 xl:grid-cols-4"
+        initial="hidden"
+        animate={controls}
+        variants={fadeInUp}
+      >
         {posts.map((post) => (
           <InstagramItem key={post.id} post={post} />
         ))}
-      </ul>
+      </motion.ul>
 
       <div className="mb-[100px] mt-[30px] sm:mt-[40px] sm:mb-[150px] md:mt-[90px] md:mb-[200px] w-full flex justify-center">
         <RotatingButton />
