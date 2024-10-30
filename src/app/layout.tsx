@@ -22,7 +22,7 @@ const gilroy = localFont({
       weight: "500",
     },
     {
-      path: "./assets/fonts/Gilroy-Semibold.ttf",
+      path: "./assets/fonts/Gilroy-SemiBold.ttf",
       weight: "600",
     },
     {
