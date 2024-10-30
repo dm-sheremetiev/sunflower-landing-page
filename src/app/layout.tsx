@@ -1,10 +1,9 @@
-"use client";
 
+import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
-import Head from "next/head";
 
 const gilroy = localFont({
   src: [
@@ -76,7 +75,7 @@ const jsonLd = {
   sameAs: ["https://www.instagram.com/sun.flower.kyiv"],
 };
 
-const metaData = {
+export const metadata: Metadata = {
   title: "SUNFLOWER - поцілунки після квітів",
   icons: {
     icon: [
@@ -120,44 +119,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <title>{metaData.title || ""}</title>
-        <meta name="description" content={metaData.description || ""} />
-        <meta
-          name="keywords"
-          content={metaData?.keywords ? metaData.keywords : ""}
-        />
-        {metaData.icons.icon.map((icon, index) => (
-          <link
-            key={index}
-            rel="icon"
-            href={icon.href}
-            media={icon.media}
-            type="image/png" // Вкажіть тип, якщо знаєте
-          />
-        ))}
-        {/* Open Graph */}
-        <meta property="og:title" content={metaData.openGraph.title} />
-        <meta
-          property="og:description"
-          content={metaData.openGraph.description}
-        />
-        <meta property="og:url" content={metaData.openGraph.url} />
-        {metaData.openGraph.images.map((image, index) => (
-          <meta key={index} property="og:image" content={image} />
-        ))}
-        {/* Twitter */}
-        <meta name="twitter:card" content={metaData.twitter.card} />
-        <meta name="twitter:title" content={metaData.twitter.title} />
-        <meta
-          name="twitter:description"
-          content={metaData.twitter.description}
-        />
-        {metaData.twitter.images.map((image, index) => (
-          <meta key={index} name="twitter:image" content={image} />
-        ))}
-      </Head>
-
       <body
         className={`${cassandra.variable} ${gilroy.variable} font-gilroy bg-white text-mainBlack`}
       >
