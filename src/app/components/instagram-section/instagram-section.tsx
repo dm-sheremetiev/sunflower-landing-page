@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { useEffect, useState } from "react";
 import { H2 } from "@/app/ui/h2/h2";
-import { InstagramItem } from "./ui/instagram-item";
+// import { InstagramItem } from "./ui/instagram-item";
 import { RotatingButton } from "../roatating-button/rotating-button";
 import { useInView } from "react-intersection-observer";
 import { useAnimation, motion } from "framer-motion";
