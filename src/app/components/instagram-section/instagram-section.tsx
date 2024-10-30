@@ -27,7 +27,7 @@ export default function InstagramSection() {
   useEffect(() => {
     async function getInstagramMedia() {
       try {
-        const mediaDetails: InstagramPost[] = await fetch(
+        const res: { data?: InstagramPost[]; error?: string } = await fetch(
           "/api/instagram"
         ).then((res) => res.json());
 
@@ -52,8 +52,14 @@ export default function InstagramSection() {
         // const mediaDetails: InstagramPost[] = await Promise.all(
         //   mediaDetailsPromises
         // );
-        if (mediaDetails) {
-          setPosts(mediaDetails);
+        if (res) {
+          if (res?.error) {
+            throw new Error(res.error);
+          }
+
+          if (res?.data) {
+            setPosts(res?.data);
+          }
         }
       } catch (error) {
         console.error("Error fetching Instagram media:", error);

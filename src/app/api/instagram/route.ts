@@ -52,7 +52,7 @@ export async function GET() {
     );
 
     // Возвращаем JSON-ответ
-    return NextResponse.json(mediaDetails);
+    return NextResponse.json({ data: mediaDetails });
   } catch (error) {
     console.error("Error fetching Instagram media:", error);
     return NextResponse.json(
