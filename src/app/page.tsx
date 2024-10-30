@@ -6,6 +6,10 @@ const Header = dynamic(() => import("@/app/components/header/header"), {
   ssr: false,
 });
 
+const AppProvider = dynamic(() => import("@/app/providers/AppProvider"), {
+  ssr: false,
+});
+
 const Footer = dynamic(() => import("@/app/components/footer/footer"), {
   ssr: false,
 });
@@ -47,21 +51,23 @@ const OurStudios = dynamic(
 export default function Home() {
   return (
     <main className="w-full h-full flex flex-col items-center">
-      <Header />
+      <AppProvider>
+        <Header />
 
-      <HeroSection />
+        <HeroSection />
 
-      <InstagramSection />
+        <InstagramSection />
 
-      <AboutUs />
+        <AboutUs />
 
-      <OurStudios />
+        <OurStudios />
 
-      <DeliveryConditions />
+        <DeliveryConditions />
 
-      <ContactsSection />
+        <ContactsSection />
 
-      <Footer />
+        <Footer />
+      </AppProvider>
     </main>
   );
 }
