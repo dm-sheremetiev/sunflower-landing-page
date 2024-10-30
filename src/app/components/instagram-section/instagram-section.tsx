@@ -19,44 +19,46 @@ export interface InstagramPost {
   caption?: string;
 }
 
-export default function InstagramSection(){
+export default function InstagramSection() {
   const { t } = useTranslation();
 
   const [posts, setPosts] = useState<InstagramPost[]>([]);
 
   useEffect(() => {
     async function getInstagramMedia() {
-      const mediaDetails: InstagramPost[] = await fetch("/api/instagram").then(
-        (res) => res.json()
-      );
+      try {
+        const mediaDetails: InstagramPost[] = await fetch(
+          "/api/instagram"
+        ).then((res) => res.json());
 
-      // const token = process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN;
+        // const token = process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN;
 
-      // const mediaResponse = await fetch(
-      //   `https://graph.instagram.com/v21.0/me?fields=media&access_token=${token}`
-      // );
-      // const mediaData = await mediaResponse.json();
+        // const mediaResponse = await fetch(
+        //   `https://graph.instagram.com/v21.0/me?fields=media&access_token=${token}`
+        // );
+        // const mediaData = await mediaResponse.json();
 
-      // const mediaItems = mediaData.media?.data.slice(0, 8);
+        // const mediaItems = mediaData.media?.data.slice(0, 8);
 
-      // if (!Array.isArray(mediaItems)) return;
+        // if (!Array.isArray(mediaItems)) return;
 
-      // const mediaDetailsPromises = mediaItems.map(async (media) => {
-      //   const mediaDetailsResponse = await fetch(
-      //     `https://graph.instagram.com/${media.id}?fields=id,media_type,media_url,thumbnail_url,permalink,caption&access_token=${token}`
-      //   );
-      //   return await mediaDetailsResponse.json();
-      // });
+        // const mediaDetailsPromises = mediaItems.map(async (media) => {
+        //   const mediaDetailsResponse = await fetch(
+        //     `https://graph.instagram.com/${media.id}?fields=id,media_type,media_url,thumbnail_url,permalink,caption&access_token=${token}`
+        //   );
+        //   return await mediaDetailsResponse.json();
+        // });
 
-      // const mediaDetails: InstagramPost[] = await Promise.all(
-      //   mediaDetailsPromises
-      // );
-      setPosts(mediaDetails);
+        // const mediaDetails: InstagramPost[] = await Promise.all(
+        //   mediaDetailsPromises
+        // );
+        setPosts(mediaDetails);
+      } catch (error) {
+        console.error("Error fetching Instagram media:", error);
+      }
     }
 
-    getInstagramMedia().catch((error) => {
-      console.error("Error fetching Instagram media:", error);
-    });
+    getInstagramMedia();
   }, []);
 
   const [ref, inView] = useInView({
@@ -106,4 +108,4 @@ export default function InstagramSection(){
       </div>
     </section>
   );
-};
+}
