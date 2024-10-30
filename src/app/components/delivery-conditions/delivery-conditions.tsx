@@ -11,7 +11,10 @@ export const DeliveryConditions = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="xl:container w-full px-[15px] md:px-[45px] xl:px-[0px] mb-[100px] md:mb-[150px] lg:mb-[200px] flex flex-col">
+    <section
+      className="xl:container w-full px-[15px] md:px-[45px] xl:px-[0px] mb-[100px] md:mb-[150px] lg:mb-[200px] flex flex-col"
+      id="delivery"
+    >
       <H2 className="mb-[40px] md:mb-[50px] lg:mb-[60px] text-center md:text-start">
         {t("delivery-conditions.delivery-conditions")}
       </H2>

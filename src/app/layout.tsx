@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { AppProvider } from "./providers/AppProvider";
 import { Header } from "./components/header/header";
+import { Footer } from "./components/footer/footer";
 
 const gilroy = localFont({
   src: [
@@ -67,6 +68,8 @@ export default function RootLayout({
           <Header />
 
           {children}
+
+          <Footer />
         </AppProvider>
       </body>
     </html>

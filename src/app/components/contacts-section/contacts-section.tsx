@@ -12,7 +12,10 @@ export const ContactsSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="xl:container w-full px-[15px] md:px-[45px] xl:px-[0px] mb-[100px] md:mb-[150px] lg:mb-[200px] flex flex-col md:flex-row md:gap-[200px] md:items-start md:grid md:grid-cols-2">
+    <section
+      className="xl:container w-full px-[15px] md:px-[45px] xl:px-[0px] mb-[100px] md:mb-[150px] lg:mb-[200px] flex flex-col md:flex-row md:gap-[200px] md:items-start md:grid md:grid-cols-2"
+      id="contacts"
+    >
       <div className="flex flex-col gap-10 md:gap-[50px] lg:gap-[60px]">
         <H2>{t("contacts.contacts")}</H2>
 
