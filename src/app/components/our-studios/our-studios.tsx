@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { fadeInUp } from "@/app/utils/animations";
 
-export const OurStudios = () => {
+export default function OurStudios() {
   const { t } = useTranslation();
 
   const [ref, inView] = useInView({
@@ -93,4 +93,4 @@ export const OurStudios = () => {
       </motion.ul>
     </section>
   );
-};
+}

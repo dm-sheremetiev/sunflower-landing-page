@@ -19,7 +19,7 @@ export interface InstagramPost {
   caption?: string;
 }
 
-export const InstagramSection = () => {
+export default function InstagramSection(){
   const { t } = useTranslation();
 
   const [posts, setPosts] = useState<InstagramPost[]>([]);

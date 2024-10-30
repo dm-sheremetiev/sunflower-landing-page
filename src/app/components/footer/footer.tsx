@@ -6,7 +6,7 @@ import LongLogo from "@/app/assets/img/svg/long-logo.svg";
 import Link from "next/link";
 import { sendGAEvent } from "@next/third-parties/google";
 
-export const Footer = () => {
+export default function Footer() {
   const { t } = useTranslation();
 
   const onClick = () => {
@@ -71,4 +71,4 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+}

@@ -8,7 +8,7 @@ import classNames from "classnames";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-export const Header = () => {
+export default function Header() {
   const [prevScrollOffsetValue, setPrevScrollOffsetValue] = useState(0);
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
 
@@ -83,4 +83,4 @@ export const Header = () => {
       </div>
     </motion.header>
   );
-};
+}

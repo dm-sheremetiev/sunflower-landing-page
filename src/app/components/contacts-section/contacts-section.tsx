@@ -13,7 +13,7 @@ import { useInView } from "react-intersection-observer";
 import { fadeInUp } from "@/app/utils/animations";
 import { sendGAEvent } from "@next/third-parties/google";
 
-export const ContactsSection = () => {
+export default function ContactsSection(){
   const { t } = useTranslation();
 
   const [ref, inView] = useInView({

@@ -11,7 +11,7 @@ import { useAnimation, motion } from "framer-motion";
 import { useEffect } from "react";
 import { fadeInUp } from "@/app/utils/animations";
 
-export const DeliveryConditions = () => {
+export default function DeliveryConditions(){
   const { t } = useTranslation();
 
   const [ref, inView] = useInView({

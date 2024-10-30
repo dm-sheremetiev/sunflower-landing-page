@@ -10,7 +10,7 @@ import { useAnimation, motion } from "framer-motion";
 import { useEffect } from "react";
 import { fadeInUp } from "@/app/utils/animations";
 
-export const AboutUs = () => {
+export default function AboutUs() {
   const { t } = useTranslation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -129,4 +129,4 @@ export const AboutUs = () => {
       </motion.div>
     </section>
   );
-};
+}

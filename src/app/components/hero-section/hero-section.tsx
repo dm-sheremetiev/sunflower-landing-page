@@ -8,7 +8,7 @@ import { useInView } from "react-intersection-observer";
 import { useAnimation, motion } from "framer-motion";
 import { useEffect } from "react";
 
-export const HeroSection = () => {
+export default function HeroSection(){
   const { t } = useTranslation();
 
   const [ref, inView] = useInView({
