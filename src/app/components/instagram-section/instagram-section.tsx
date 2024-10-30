@@ -52,7 +52,9 @@ export default function InstagramSection() {
         // const mediaDetails: InstagramPost[] = await Promise.all(
         //   mediaDetailsPromises
         // );
-        setPosts(mediaDetails);
+        if (mediaDetails) {
+          setPosts(mediaDetails);
+        }
       } catch (error) {
         console.error("Error fetching Instagram media:", error);
       }
@@ -98,7 +100,7 @@ export default function InstagramSection() {
         animate={controls}
         variants={fadeInUp}
       >
-        {posts.map((post) => (
+        {posts?.map((post) => (
           <InstagramItem key={post.id} post={post} />
         ))}
       </motion.ul>
