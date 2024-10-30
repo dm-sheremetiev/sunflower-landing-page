@@ -78,6 +78,8 @@ export default function InstagramSection() {
     }
   }, [controls, inView]);
 
+  console.log(posts);
+
   return (
     <section className="xl:container w-full mt-[100px] sm:mt-[150px] md:mt-[200px] px-[15px] md:px-[45px] xl:px-[0px]">
       <div
@@ -100,9 +102,9 @@ export default function InstagramSection() {
         animate={controls}
         variants={fadeInUp}
       >
-        {posts?.map((post) => (
+        {/* {posts?.map((post) => (
           <InstagramItem key={post.id} post={post} />
-        ))}
+        ))} */}
       </motion.ul>
 
       <div className="mb-[100px] mt-[30px] sm:mt-[40px] sm:mb-[150px] md:mt-[90px] md:mb-[200px] w-full flex justify-center">
