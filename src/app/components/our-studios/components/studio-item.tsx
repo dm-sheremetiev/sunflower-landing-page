@@ -40,7 +40,7 @@ export const StudioItem = ({
           "lg:order-1": !reversed,
         })}
       >
-        <a href={locationLink} target="_blank">
+        <a href={locationLink} target="_blank" className="max-w-fit">
           <p className="text-[18px] italic text-mainBlack mb-5 md:text-[22px] lg:text-[35px] hover:text-mainRed transition-all">
             {title}
           </p>
@@ -48,7 +48,7 @@ export const StudioItem = ({
 
         <div className="flex flex-col gap-[15px]">
           <div className="flex flex-row gap-[10px] items-center">
-            <div className="w-6 h-6">
+            <div className="w-5 h-5 md:w-6 md:h-6">
               <LocationIcon />
             </div>
 
@@ -58,7 +58,7 @@ export const StudioItem = ({
           </div>
 
           <div className="flex flex-row gap-[10px] items-center">
-            <div className="w-6 h-6">
+            <div className="w-5 h-5 md:w-6 md:h-6">
               <ClockIcon />
             </div>
 
@@ -69,9 +69,9 @@ export const StudioItem = ({
 
           <a
             href={`tel:${number}`}
-            className="flex flex-row gap-[10px] items-center"
+            className="flex flex-row gap-[10px] items-center max-w-fit"
           >
-            <div className="w-6 h-6">
+            <div className="w-5 h-5 md:w-6 md:h-6">
               <PhoneIcon />
             </div>
 

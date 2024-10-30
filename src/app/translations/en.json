@@ -52,6 +52,14 @@
     "region": "Delivery in the region and suburban areas",
     "by-taxi-rate-2": "at taxi rates"
   },
+  "contacts": {
+    "contacts": "CONTACTS",
+    "for-orders": "For orders:",
+    "fayna-town": "Fayna Town Residential Complex",
+    "french-quarter": "French Quarter 2 Residential Complex",
+    "for-cooperation": "For cooperation:",
+    "social-networks": "Social networks:"
+  },
   "languages": {
     "ua": "UA",
     "en": "EN"

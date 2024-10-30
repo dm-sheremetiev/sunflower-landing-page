@@ -10,7 +10,10 @@ export const AboutUs = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="w-full flex flex-col gap-[100px] md:gap-[150px] lg:gap-[200px] mb-[100px] md:mb-[150px] lg:mb-[200px]">
+    <section
+      className="w-full flex flex-col gap-[100px] md:gap-[150px] lg:gap-[200px] mb-[100px] md:mb-[150px] lg:mb-[200px]"
+      id="about-us"
+    >
       <div className="bg-mainPink flex items-center justify-center">
         <div className="w-full xl:container mt-10 mb-[30px] md:mt-[50px] md:mb-[30px] lg:mt-[70px] lg:mb-[50px] flex flex-col items-center px-[15px] md:px-[40px]">
           <H2>{t("about-us.about-us")}</H2>

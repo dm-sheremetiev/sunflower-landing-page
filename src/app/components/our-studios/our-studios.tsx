@@ -9,7 +9,7 @@ export const OurStudios = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="xl:container w-full px-[15px] md:px-[45px] xl:px-[0px] mb-[100px] md:mb-[150px] lg:mb-[200px]">
+    <section className="xl:container w-full px-[15px] md:px-[45px] xl:px-[0px] mb-[100px] md:mb-[150px] lg:mb-[200px]" id="our-studios">
       <div className="flex flex-col md:flex-row md:justify-between gap-[10px] md:items-center mb-[40px] md:mb-[50px] lg:mb-[60px]">
         <H2>{t("our-studios.our-studios")}</H2>
 
