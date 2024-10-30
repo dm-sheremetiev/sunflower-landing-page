@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import Roze from "@/app/assets/img/svg/roze.svg";
@@ -12,6 +12,11 @@ import BlueHydrangea from "@/app/assets/img/blue-hydrangea.jpeg";
 import Mix from "@/app/assets/img/mix.jpeg";
 import Image from "next/image";
 import classNames from "classnames";
+import { useInView } from "react-intersection-observer";
+import { useAnimation, motion } from "framer-motion";
+import { fadeInUp } from "@/app/utils/animations";
+import { useMediaQuery } from "@/app/hooks";
+import { BREAKPOINTS } from "@/app/constants/breakpoints";
 
 interface Props {
   iconName: string;
@@ -72,8 +77,47 @@ export const AboutUsItem = ({
     }
   }, [mainImage]);
 
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
+  const md = useMediaQuery(BREAKPOINTS.md);
+
   return (
-    <li className="flex flex-col md:grid md:grid-cols-2 gap-5 md:gap-[30px] lg:gap-[80px]">
+    <motion.li
+      className="flex flex-col md:grid md:grid-cols-2 gap-5 md:gap-[30px] lg:gap-[80px]"
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={
+        md
+          ? {
+              hidden: {
+                opacity: 0,
+                x: isReversed ? 100 : -100,
+              },
+              visible: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  duration: 1,
+                },
+              },
+            }
+          : fadeInUp
+      }
+    >
       <div
         className={classNames("flex flex-col gap-5 order-1", {
           "md:order-2": isReversed,
@@ -108,9 +152,8 @@ export const AboutUsItem = ({
           alt="main-image"
           src={getMainImagePath()}
           fill
-          objectFit="cover"
         />
       </div>
-    </li>
+    </motion.li>
   );
 };

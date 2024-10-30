@@ -7,14 +7,37 @@ import InstagramIcon from "@/app/assets/img/svg/instagram-icon.svg";
 import TelegramIcon from "@/app/assets/img/svg/telegram-icon.svg";
 import ContactsImage from "@/app/assets/img/contacts-image.png";
 import Image from "next/image";
+import { useAnimation, motion } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { fadeInUp } from "@/app/utils/animations";
 
 export const ContactsSection = () => {
   const { t } = useTranslation();
 
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [inView, controls]);
+
   return (
-    <section
+    <motion.section
       className="xl:container w-full px-[15px] md:px-[45px] xl:px-[0px] mb-[100px] md:mb-[150px] lg:mb-[200px] flex flex-col md:flex-row md:gap-[200px] md:items-start md:grid md:grid-cols-2"
       id="contacts"
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={fadeInUp}
     >
       <div className="flex flex-col gap-10 md:gap-[50px] lg:gap-[60px]">
         <H2>{t("contacts.contacts")}</H2>
@@ -114,6 +137,6 @@ export const ContactsSection = () => {
           className="max-h-[500px]"
         />
       </div>
-    </section>
+    </motion.section>
   );
 };
