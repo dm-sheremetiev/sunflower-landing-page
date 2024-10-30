@@ -52,6 +52,14 @@
     "region": "Доставка по області та передмістю",
     "by-taxi-rate-2": "за тарифами таксі"
   },
+  "contacts": {
+    "contacts": "КОНТАКТИ",
+    "for-orders": "Для замовлень:",
+    "fayna-town": "ЖК Файна Таун",
+    "french-quarter": "ЖК Французький Квартал 2",
+    "for-cooperation": "З приводу співпраці:",
+    "social-networks": "Соціальні мережі:"
+  },
   "languages": {
     "ua": "UA",
     "en": "EN"
