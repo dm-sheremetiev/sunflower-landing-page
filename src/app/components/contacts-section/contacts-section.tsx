@@ -11,6 +11,7 @@ import { useAnimation, motion } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { fadeInUp } from "@/app/utils/animations";
+import { sendGAEvent } from "@next/third-parties/google";
 
 export const ContactsSection = () => {
   const { t } = useTranslation();
@@ -53,6 +54,7 @@ export const ContactsSection = () => {
                 <a
                   href={`tel:+380669928410`}
                   className="flex flex-row gap-[10px] items-center w-fit"
+                  onClick={() => sendGAEvent("event", "french_phone_click")}
                 >
                   <div className="w-5 h-5 md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[25px] mb-1">
                     <PhoneIcon />
@@ -69,6 +71,7 @@ export const ContactsSection = () => {
                 <a
                   href={`tel:+380636778996`}
                   className="flex flex-row gap-[10px] items-center w-fit"
+                  onClick={() => sendGAEvent("event", "fayna_phone_click")}
                 >
                   <div className="w-5 h-5 md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[25px] mb-1">
                     <PhoneIcon />
@@ -92,6 +95,7 @@ export const ContactsSection = () => {
               <a
                 href={`tel:+380636778957`}
                 className="flex flex-row gap-[10px] items-center w-fit"
+                onClick={() => sendGAEvent("event", "cooperation_phone_click")}
               >
                 <div className="w-5 h-5 md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[25px] mb-1">
                   <PhoneIcon />
@@ -114,6 +118,7 @@ export const ContactsSection = () => {
                 href="https://www.instagram.com/sun.flower.kyiv"
                 target="_blank"
                 className="w-[25px] h-[25px] md:w-[30px] md:h-[30px] lg:w-[35px]"
+                onClick={() => sendGAEvent("event", "instagram_social_click")}
               >
                 <InstagramIcon />
               </a>
@@ -122,6 +127,7 @@ export const ContactsSection = () => {
                 href="https://t.me/sun_flower_kyiv"
                 target="_blank"
                 className="w-[25px] h-[25px] md:w-[30px] md:h-[30px] lg:w-[35px]"
+                onClick={() => sendGAEvent("event", "telegram_social_click")}
               >
                 <TelegramIcon />
               </a>

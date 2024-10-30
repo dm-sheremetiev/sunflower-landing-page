@@ -142,7 +142,7 @@ export const AboutUsItem = ({
 
       <div
         className={classNames(
-          "w-full min-h-[257px] md:min-h-[435px] relative order-1",
+          "w-full min-h-[357px] md:min-h-[445px] lg:min-h-[535px] relative order-1",
           {
             "md:order-1": isReversed,
           }

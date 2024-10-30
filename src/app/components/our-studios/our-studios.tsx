@@ -76,6 +76,7 @@ export const OurStudios = () => {
           description={t("our-studios.french-location")}
           locationLink="https://maps.app.goo.gl/tkZGMdteJKqL5hn67"
           isFrench
+          locationForGA="french"
         />
 
         <Divider />
@@ -87,6 +88,7 @@ export const OurStudios = () => {
           description={t("our-studios.fayna-location")}
           locationLink="https://maps.app.goo.gl/LF5ZPdKcrJA2K2k88"
           reversed
+          locationForGA="fayna"
         />
       </motion.ul>
     </section>

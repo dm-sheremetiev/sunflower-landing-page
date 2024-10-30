@@ -125,7 +125,7 @@ export const AboutUs = () => {
         variants={fadeInUp}
         className="w-full flex items-center justify-center scale-[1]"
       >
-        <Button isRed />
+        <Button isRed location="about_us" />
       </motion.div>
     </section>
   );

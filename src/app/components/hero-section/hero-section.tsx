@@ -7,7 +7,6 @@ import { Button } from "@/app/ui/button/button";
 import { useInView } from "react-intersection-observer";
 import { useAnimation, motion } from "framer-motion";
 import { useEffect } from "react";
-import { fadeInUp } from "@/app/utils/animations";
 
 export const HeroSection = () => {
   const { t } = useTranslation();
@@ -73,7 +72,7 @@ export const HeroSection = () => {
         </h2>
 
         <div className="mt-[174px]">
-          <Button />
+          <Button location="hero" />
         </div>
       </motion.div>
     </motion.div>

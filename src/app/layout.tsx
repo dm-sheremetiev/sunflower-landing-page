@@ -5,6 +5,8 @@ import { AppProvider } from "./providers/AppProvider";
 import { Header } from "./components/header/header";
 import { Footer } from "./components/footer/footer";
 
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 const gilroy = localFont({
   src: [
     {
@@ -64,6 +66,8 @@ export default function RootLayout({
       <body
         className={`${cassandra.variable} ${gilroy.variable} font-gilroy bg-white text-mainBlack`}
       >
+        <GoogleAnalytics gaId="G-6QT2LR9HSE" />
+
         <AppProvider>
           <Header />
 
