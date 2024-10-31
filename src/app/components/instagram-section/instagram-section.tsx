@@ -84,11 +84,28 @@ export default function InstagramSection() {
     }
   }, [controls, inView]);
 
-  return (
+  return !!posts?.length ? (
     <section className="xl:container w-full mt-[100px] sm:mt-[150px] md:mt-[200px] px-[15px] md:px-[45px] xl:px-[0px]">
-      <div
+      <motion.div
+        ref={ref}
         className="flex xsm:items-center gap-3 xsm:gap-5 justify-between md:justify-normal xsm:flex-row flex-col"
+        initial="hidden"
         id="showcase"
+        animate={controls}
+        variants={{
+          hidden: {
+            opacity: 0,
+            y: 20,
+          },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 1,
+              ease: "easeInOut",
+            },
+          },
+        }}
       >
         <H2>{t("instagram.instagram-showcase")}</H2>
 
@@ -97,7 +114,7 @@ export default function InstagramSection() {
             {t("instagram.sunflower")}
           </p>
         </a>
-      </div>
+      </motion.div>
 
       <motion.ul
         ref={ref}
@@ -106,13 +123,13 @@ export default function InstagramSection() {
         animate={controls}
         variants={fadeInUp}
       >
-        {posts?.length &&
+        {!!posts?.length &&
           posts?.map((post) => <InstagramItem key={post.id} post={post} />)}
       </motion.ul>
 
       <div className="mb-[100px] mt-[30px] sm:mt-[40px] sm:mb-[150px] md:mt-[90px] md:mb-[200px] w-full flex justify-center">
-        {posts?.length && <RotatingButton />}
+        {!!posts?.length && <RotatingButton />}
       </div>
     </section>
-  );
+  ) : null;
 }

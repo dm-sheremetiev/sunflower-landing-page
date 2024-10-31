@@ -40,14 +40,14 @@ export default function HeroSection() {
           opacity: 1,
           y: 0,
           transition: {
-            duration: 1, // длительность анимации
-            ease: "easeInOut", // эффект easing
+            duration: 1,
+            ease: "easeInOut",
           },
         },
       }}
     >
-      <div className="absolute top-0 right-0 left-0 bottom-0">
-        <Image src={"/heroImage.png"} alt="hero-image" layout="fill" objectFit="cover" quality={90} />
+      <div className="absolute top-0 right-0 left-0 bottom-0 -z-[1]">
+        <Image src={"/heroImage.png"} alt="hero-image" layout="fill" objectFit="cover" quality={50} />
       </div>
 
       <motion.div
