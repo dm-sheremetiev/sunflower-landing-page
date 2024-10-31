@@ -52,7 +52,7 @@ export default function HeroSection() {
           alt="hero-image"
           layout="fill"
           objectFit="cover"
-          quality={40}
+          quality={50}
           priority={true}
         />
       </div>

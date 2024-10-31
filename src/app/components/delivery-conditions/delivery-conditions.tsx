@@ -11,7 +11,7 @@ import { useAnimation, motion } from "framer-motion";
 import { useEffect } from "react";
 import { fadeInUp } from "@/app/utils/animations";
 
-export default function DeliveryConditions(){
+export default function DeliveryConditions() {
   const { t } = useTranslation();
 
   const [ref, inView] = useInView({
@@ -43,7 +43,11 @@ export default function DeliveryConditions(){
       </H2>
 
       <div className="flex flex-col md:grid md:grid-cols-2 md:gap-5 lg:gap-[60px] md:items-center">
-        <Image src={DeliveryConditionsPhoto} alt="delivery-conditions" />
+        <Image
+          src={DeliveryConditionsPhoto}
+          alt="delivery-conditions"
+          quality={60}
+        />
 
         <p className="text-[14px] md:text-[16px] lg:text-[25px] text-center  mt-[30px] md:text-left">
           {t("delivery-conditions.how-we-deliver")}
@@ -95,4 +99,4 @@ export default function DeliveryConditions(){
       </div>
     </motion.section>
   );
-};
+}
