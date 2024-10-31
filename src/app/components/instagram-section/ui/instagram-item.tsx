@@ -33,7 +33,7 @@ export const InstagramItem = ({
         fill
         src={imageSrc}
         alt="inst_photo"
-        quality={50}
+        quality={40}
         className={classNames(
           "object-cover opacity-1 transition-all duration-500",
           {
