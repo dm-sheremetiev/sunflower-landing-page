@@ -24,7 +24,7 @@ export default function AboutUs() {
 
   const [refButton, buttonInView] = useInView({
     triggerOnce: true,
-    threshold: 0.5,
+    threshold: 0.4,
   });
 
   const hControls = useAnimation();

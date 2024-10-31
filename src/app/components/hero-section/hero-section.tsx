@@ -7,8 +7,9 @@ import { Button } from "@/app/ui/button/button";
 import { useInView } from "react-intersection-observer";
 import { useAnimation, motion } from "framer-motion";
 import { useEffect } from "react";
+import Image from "next/image";
 
-export default function HeroSection(){
+export default function HeroSection() {
   const { t } = useTranslation();
 
   const [ref, inView] = useInView({
@@ -27,7 +28,7 @@ export default function HeroSection(){
   return (
     <motion.div
       ref={ref}
-      className='w-full bg-[url("/heroImage.png")] bg-no-repeat bg-cover bg-top flex flex-col items-center gap-[290px] pt-[376px] sm:pt-[557px] md:pt-[447px] pb-[95px] sm:pb-[135px] md:pb-[100px]'
+      className="w-full relative bg-no-repeat bg-cover bg-top flex flex-col items-center gap-[290px] pt-[376px] sm:pt-[557px] md:pt-[447px] pb-[95px] sm:pb-[135px] md:pb-[100px]"
       initial="hidden"
       animate={controls}
       variants={{
@@ -45,6 +46,10 @@ export default function HeroSection(){
         },
       }}
     >
+      <div className="absolute top-0 right-0 left-0 bottom-0">
+        <Image src={"/heroImage.png"} alt="hero-image" layout="fill" objectFit="cover" quality={90} />
+      </div>
+
       <motion.div
         className="flex flex-col gap-[50px] items-center px-[15px] md:px-[45px] xl:px-[60px]"
         initial="hidden"
@@ -77,4 +82,4 @@ export default function HeroSection(){
       </motion.div>
     </motion.div>
   );
-};
+}

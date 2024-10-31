@@ -79,7 +79,7 @@ export const AboutUsItem = ({
 
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.5,
+    threshold: 0.4,
   });
 
   const controls = useAnimation();
