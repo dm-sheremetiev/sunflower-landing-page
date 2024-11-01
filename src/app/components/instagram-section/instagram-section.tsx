@@ -9,6 +9,7 @@ import { RotatingButton } from "../roatating-button/rotating-button";
 import { useInView } from "react-intersection-observer";
 import { useAnimation, motion } from "framer-motion";
 import { fadeInUp } from "@/app/utils/animations";
+import { sendGAEvent } from "@next/third-parties/google";
 
 export interface InstagramPost {
   id: string;
@@ -136,7 +137,10 @@ export default function InstagramSection() {
           {t("discount.order-inst")}
         </h2>
 
-        <h2 className="text-[35px] sm:text-[50px] md:text-[60px] font-bold text-center">
+        <h2
+          className="text-[35px] sm:text-[50px] md:text-[60px] font-bold text-center"
+          onSelect={() => sendGAEvent("event", "discount_select")}
+        >
           SNFLWR
         </h2>
 
