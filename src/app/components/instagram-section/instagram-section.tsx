@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import { useEffect, useState } from "react";
 import { H2 } from "@/app/ui/h2/h2";
@@ -127,8 +127,28 @@ export default function InstagramSection() {
           posts?.map((post) => <InstagramItem key={post.id} post={post} />)}
       </motion.ul>
 
-      <div className="mb-[100px] mt-[30px] sm:mt-[40px] sm:mb-[150px] md:mt-[90px] md:mb-[200px] w-full flex justify-center">
+      <div className="mt-[30px] sm:mt-[40px] md:mt-[90px] w-full flex justify-center">
         {!!posts?.length && <RotatingButton />}
+      </div>
+
+      <div className="mt-10 sm:mt-[70px] flex flex-col items-center mb-[100px] sm:mb-[150px] md:mb-[200px]">
+        <h2 className="text-mainRed text-[25px] sm:text-[35px] md:text-[40px] font-semibold text-center">
+          {t("discount.order-inst")}
+        </h2>
+
+        <h2 className="text-[35px] sm:text-[50px] md:text-[60px] font-bold text-center">
+          SNFLWR
+        </h2>
+
+        <Trans>
+          <h2 className="text-mainRed text-[25px] sm:text-[35px] md:text-[40px] font-semibold text-center">
+            {t("discount.get-discount")}
+
+            <span className="font-bold underline">5%</span>
+
+            {t("discount.for-first-order")}
+          </h2>
+        </Trans>
       </div>
     </section>
   ) : null;
