@@ -7,6 +7,7 @@ import AlbumIcon from "@/app/assets/img/svg/instagram-album-icon.svg";
 import InstagramVideo from "@/app/assets/img/svg/instagram-reels-icon.svg";
 import { InstagramPost } from "../instagram-section";
 import classNames from "classnames";
+import { sendGAEvent } from "@next/third-parties/google";
 
 interface Props {
   post: InstagramPost;
@@ -28,6 +29,7 @@ export const InstagramItem = ({
       className="relative h-[205px] xsm:h-[235px] sm:h-[285px] md:h-[435px] xl:h-[500px] max-h-[205px] xsm:max-h-[235px] sm:max-h-[285px] md:max-h-[435px] xl:max-h-[500px] w-full hover:scale-[1.009] transition-all"
       target="_blank"
       rel="noreferrer"
+      onClick={() => sendGAEvent("event", "instagram_item_click")}
     >
       <Image
         fill
