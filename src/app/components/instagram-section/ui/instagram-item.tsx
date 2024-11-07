@@ -1,13 +1,12 @@
 "use client";
 
-import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 
 import AlbumIcon from "@/app/assets/img/svg/instagram-album-icon.svg";
 import InstagramVideo from "@/app/assets/img/svg/instagram-reels-icon.svg";
 import { InstagramPost } from "../instagram-section";
-import classNames from "classnames";
 import { sendGAEvent } from "@next/third-parties/google";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 interface Props {
   post: InstagramPost;
@@ -16,33 +15,26 @@ interface Props {
 export const InstagramItem = ({
   post: { media_url, thumbnail_url, permalink, media_type },
 }: Props) => {
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const isVideo = useMemo(() => media_type === "VIDEO", [media_type]);
 
   const imageSrc = useMemo(
     () => (isVideo ? thumbnail_url || "" : media_url || thumbnail_url || ""),
     [media_type, media_url, thumbnail_url, isVideo]
   );
+
   return (
     <a
       href={permalink}
-      className="relative h-[205px] xsm:h-[235px] sm:h-[285px] md:h-[435px] xl:h-[500px] max-h-[205px] xsm:max-h-[235px] sm:max-h-[285px] md:max-h-[435px] xl:max-h-[500px] w-full hover:scale-[1.009] transition-all"
       target="_blank"
       rel="noreferrer"
       onClick={() => sendGAEvent("event", "instagram_item_click")}
     >
-      <Image
-        fill
+      <LazyLoadImage
+        width="100%"
         src={imageSrc}
         alt="inst_photo"
-        quality={40}
-        className={classNames(
-          "object-cover opacity-1 transition-all duration-500",
-          {
-            "opacity-1": isImageLoaded,
-          }
-        )}
-        onLoad={() => setIsImageLoaded(true)}
+        effect="opacity"
+        className="flex relative h-[205px] xsm:h-[235px] sm:h-[285px] md:h-[435px] max-h-[205px] xsm:max-h-[235px] sm:max-h-[285px] md:max-h-[435px] w-full hover:scale-[1.009] transition-all"
       />
 
       <div className="absolute right-2 top-2 h-5 w-5">
