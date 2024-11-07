@@ -91,6 +91,20 @@ export default function InstagramSection() {
     }
   }, [discountControls, inViewDisc]);
 
+  const ulControls = useAnimation();
+  const [refUl, inViewUl] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
+  useEffect(() => {
+    if (inViewUl) {
+      ulControls.start("visible");
+    } else {
+      ulControls.start("hidden");
+    }
+  }, [ulControls, inViewUl]);
+
   useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -102,8 +116,38 @@ export default function InstagramSection() {
   return (
     <section className="xl:container w-full mt-[100px] sm:mt-[150px] md:mt-[200px] px-[15px] md:px-[45px] xl:px-[0px] mb-[100px] sm:mb-[150px] md:mb-[200px]">
       <motion.div
+        ref={ref}
+        className="flex xsm:items-center gap-3 xsm:gap-5 justify-between md:justify-normal xsm:flex-row flex-col"
+        initial="hidden"
+        id="showcase"
+        animate={controls}
+        variants={{
+          hidden: {
+            opacity: 0,
+            y: 20,
+          },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 1,
+              ease: "easeInOut",
+            },
+          },
+        }}
+      >
+        <H2>{t("instagram.instagram-showcase")}</H2>
+
+        <a href="https://www.instagram.com/sun.flower.kyiv" target="_blank">
+          <p className="text-mainRed text-[13px] leading-[16px] sm:text-[16px] sm:leading-[17.6px] md:text-[25px] md:leading-[30px]">
+            {t("instagram.sunflower")}
+          </p>
+        </a>
+      </motion.div>
+
+      <motion.div
         ref={refDisc}
-        className="flex flex-col items-center mb-[100px]"
+        className="flex flex-col items-center my-[50px] md:my-[80px]"
         initial="hidden"
         id="showcase"
         animate={discountControls}
@@ -144,41 +188,11 @@ export default function InstagramSection() {
         </Trans>
       </motion.div>
 
-      <motion.div
-        ref={ref}
-        className="flex xsm:items-center gap-3 xsm:gap-5 justify-between md:justify-normal xsm:flex-row flex-col"
-        initial="hidden"
-        id="showcase"
-        animate={controls}
-        variants={{
-          hidden: {
-            opacity: 0,
-            y: 20,
-          },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              duration: 1,
-              ease: "easeInOut",
-            },
-          },
-        }}
-      >
-        <H2>{t("instagram.instagram-showcase")}</H2>
-
-        <a href="https://www.instagram.com/sun.flower.kyiv" target="_blank">
-          <p className="text-mainRed text-[13px] leading-[16px] sm:text-[16px] sm:leading-[17.6px] md:text-[25px] md:leading-[30px]">
-            {t("instagram.sunflower")}
-          </p>
-        </a>
-      </motion.div>
-
       <motion.ul
-        ref={ref}
+        ref={refUl}
         className="mt-5 xsm:mt-10 sm:mt-[50px] md:mt-[60px] grid w-full grid-cols-2 gap-[15px] sm:gap-5 sm:grid-cols-3 xl:grid-cols-4"
         initial="hidden"
-        animate={controls}
+        animate={ulControls}
         variants={fadeInUp}
       >
         {!!posts?.length &&
