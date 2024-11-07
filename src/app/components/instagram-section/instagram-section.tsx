@@ -77,6 +77,20 @@ export default function InstagramSection() {
 
   const controls = useAnimation();
 
+  const discountControls = useAnimation();
+  const [refDisc, inViewDisc] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
+  useEffect(() => {
+    if (inViewDisc) {
+      discountControls.start("visible");
+    } else {
+      discountControls.start("hidden");
+    }
+  }, [discountControls, inViewDisc]);
+
   useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -85,8 +99,51 @@ export default function InstagramSection() {
     }
   }, [controls, inView]);
 
-  return !!posts?.length ? (
-    <section className="xl:container w-full mt-[100px] sm:mt-[150px] md:mt-[200px] px-[15px] md:px-[45px] xl:px-[0px]">
+  return (
+    <section className="xl:container w-full mt-[100px] sm:mt-[150px] md:mt-[200px] px-[15px] md:px-[45px] xl:px-[0px] mb-[100px] sm:mb-[150px] md:mb-[200px]">
+      <motion.div
+        ref={refDisc}
+        className="flex flex-col items-center mb-[100px]"
+        initial="hidden"
+        id="showcase"
+        animate={discountControls}
+        variants={{
+          hidden: {
+            opacity: 0,
+            y: 20,
+          },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 1,
+              ease: "easeInOut",
+            },
+          },
+        }}
+      >
+        <h2 className="text-mainRed text-[25px] sm:text-[35px] md:text-[40px] font-medium text-center">
+          {t("discount.order-inst")}
+        </h2>
+
+        <h2
+          className="text-[35px] sm:text-[50px] md:text-[60px] font-bold text-center"
+          onSelect={() => sendGAEvent("event", "discount_select")}
+        >
+          SNFLWR
+        </h2>
+
+        <Trans>
+          <h2 className="text-mainRed text-[25px] sm:text-[35px] md:text-[40px] font-medium text-center">
+            {t("discount.get-discount")}
+
+            <span className="font-bold underline">5%</span>
+
+            {t("discount.for-first-order")}
+          </h2>
+        </Trans>
+      </motion.div>
+
       <motion.div
         ref={ref}
         className="flex xsm:items-center gap-3 xsm:gap-5 justify-between md:justify-normal xsm:flex-row flex-col"
@@ -131,29 +188,6 @@ export default function InstagramSection() {
       <div className="mt-[30px] sm:mt-[40px] md:mt-[90px] w-full flex justify-center">
         {!!posts?.length && <RotatingButton />}
       </div>
-
-      <div className="mt-10 sm:mt-[70px] flex flex-col items-center mb-[100px] sm:mb-[150px] md:mb-[200px]">
-        <h2 className="text-mainRed text-[25px] sm:text-[35px] md:text-[40px] font-semibold text-center">
-          {t("discount.order-inst")}
-        </h2>
-
-        <h2
-          className="text-[35px] sm:text-[50px] md:text-[60px] font-bold text-center"
-          onSelect={() => sendGAEvent("event", "discount_select")}
-        >
-          SNFLWR
-        </h2>
-
-        <Trans>
-          <h2 className="text-mainRed text-[25px] sm:text-[35px] md:text-[40px] font-semibold text-center">
-            {t("discount.get-discount")}
-
-            <span className="font-bold underline">5%</span>
-
-            {t("discount.for-first-order")}
-          </h2>
-        </Trans>
-      </div>
     </section>
-  ) : null;
+  );
 }
