@@ -8,7 +8,11 @@ import classNames from "classnames";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-export default function Header() {
+interface Props {
+  isExternal?: boolean;
+}
+
+export default function Header({ isExternal }: Props) {
   const [prevScrollOffsetValue, setPrevScrollOffsetValue] = useState(0);
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
 
@@ -79,6 +83,7 @@ export default function Header() {
           isMenuVisible={isMenuVisible}
           showMenu={showMenu}
           hideMenu={hideMenu}
+          isExternal={isExternal}
         />
       </div>
     </motion.header>

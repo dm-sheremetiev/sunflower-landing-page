@@ -13,7 +13,7 @@ import { useInView } from "react-intersection-observer";
 import { fadeInUp } from "@/app/utils/animations";
 import { sendGAEvent } from "@next/third-parties/google";
 
-export default function ContactsSection(){
+export default function ContactsSection() {
   const { t } = useTranslation();
 
   const [ref, inView] = useInView({
@@ -133,6 +133,19 @@ export default function ContactsSection(){
               </a>
             </div>
           </div>
+
+          <div>
+            <a
+              className="flex flex-row gap-[10px] items-center w-fit"
+              onClick={() => sendGAEvent("event", "public_offer_click")}
+              href="/public-offer"
+              target="_blank"
+            >
+              <p className="text-[14px] md:text-[16px] lg:text-[25px] text-mainBlack hover:text-mainRed transition-all font-medium">
+                {t("info.public-offer")}
+              </p>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -145,4 +158,4 @@ export default function ContactsSection(){
       </div>
     </motion.section>
   );
-};
+}

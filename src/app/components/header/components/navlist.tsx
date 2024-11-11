@@ -6,11 +6,17 @@ import { sendGAEvent } from "@next/third-parties/google";
 
 interface Props {
   isMenuVisible: boolean;
+  isExternal?: boolean;
   hideMenu: () => void;
   changeLanguage: (lng: string) => void;
 }
 
-export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
+export const NavList = ({
+  isMenuVisible,
+  hideMenu,
+  changeLanguage,
+  isExternal,
+}: Props) => {
   const { t } = useTranslation();
 
   const onClick = () => {
@@ -33,7 +39,7 @@ export const NavList = ({ isMenuVisible, hideMenu, changeLanguage }: Props) => {
 
         <li onClick={onClick}>
           <a
-            href="#about-us"
+            href={`${isExternal ? "/" : ""}#about-us`}
             className="text-black text-[16px] lg:text-[25px] hover:text-mainRed transition-all"
           >
             {t("info.about-us")}
