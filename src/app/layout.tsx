@@ -95,19 +95,20 @@ export const metadata: Metadata = {
     "sunflower, sunflower квітковий, sunflower магазин, букеты, цветы, цветочный, доставка цветов, розы, пионы, гортензии, квіти, букети, доставка квітів, квітковий магазин, Київ, замовлення квітів, флористика, весільні букети, квіткові композиції, корпоративні подарунки, доставка квітів по Києву, квіти на свято, букети з троянд, замовити букет онлайн, свіжі квіти, букети на день народження, квіти на весілля, доставка квітів на замовлення, квіткові сервіси, композиції з квітів, покупки квітів, квітковий бізнес, оформлення квітами, букети на замовлення, інтернет-магазин квітів, поради щодо вибору квітів, святкові квіти, доставка в офіс, букети з лілеї, замовлення святкових квітів, букеты Киев, доставка цветов Киев, букеты на заказ, доставка цветов на день рождения, цветы для свадьбы, оформление свадебных букетов, флорист для свадьбы, заказ цветов онлайн, букеты для дома, оформление интерьера цветами, подарок на юбилей, оформление цветов для корпоратива, доставка цветов в офис",
   authors: [{ name: "SUNFLOWER" }],
   openGraph: {
-    title: "SUNFLOWER - Квітковий магазин в Києві",
+    title: "SUNFLOWER - поцілунки після квітів",
     description:
       "SUNFLOWER - найкращі квіти для тебе. Доставка по Києву та області. Найкращі ціни та якість.",
     url: "https://sun-flower.shop",
     images: ["/icon.svg"],
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "SUNFLOWER - поцілунки після квітів",
-    description: "Знайдіть ідеальний букет для будь-якої нагоди в SUNFLOWER.",
-    images: ["/icon.svg"],
-  },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: "SUNFLOWER - Квітковий магазин в Києві",
+  //   description:
+  //     "SUNFLOWER - найкращі квіти для тебе. Доставка по Києву та області. Найкращі ціни та якість.",
+  //   images: ["/icon.svg"],
+  // },
 };
 
 export default function RootLayout({
@@ -120,20 +121,20 @@ export default function RootLayout({
       <body
         className={`${cassandra.variable} ${gilroy.variable} font-gilroy bg-white text-mainBlack`}
       >
-         <script
-            type="text/javascript"
-            dangerouslySetInnerHTML={{
-              __html: `(function(w,d,t,u,c){
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,t,u,c){
                 var s=d.createElement(t),j=d.getElementsByTagName(t)[0];
                 s.src=u;
                 s["async"]=true;
                 s.defer=true;
                 s.onload=function(){KeyCRM.render(c);};
                 j.parentNode.insertBefore(s,j)
-              })(window, document, "script","https://chat.key.live/bundles/widget.min.js",{token:"ad043bcc-dc46-4deb-8088-9d5e24bb92f5"});`
-            }}
-          />
-          
+              })(window, document, "script","https://chat.key.live/bundles/widget.min.js",{token:"ad043bcc-dc46-4deb-8088-9d5e24bb92f5"});`,
+          }}
+        />
+
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
