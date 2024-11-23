@@ -54,6 +54,7 @@ export default function HeroSection() {
           objectFit="cover"
           quality={50}
           priority={true}
+          fetchPriority="high"
         />
       </div>
 

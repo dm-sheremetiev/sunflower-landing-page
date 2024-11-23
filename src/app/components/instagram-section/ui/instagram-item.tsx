@@ -33,7 +33,7 @@ export const InstagramItem = ({
         width="100%"
         src={imageSrc}
         alt="inst_photo"
-        effect="opacity"
+        effect="blur"
         placeholderSrc="/blur.png"
         className="flex relative h-[205px] xsm:h-[235px] sm:h-[285px] md:h-[435px] max-h-[205px] xsm:max-h-[235px] sm:max-h-[285px] md:max-h-[435px] w-full hover:scale-[1.009] transition-all"
       />
