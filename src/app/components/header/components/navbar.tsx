@@ -49,7 +49,7 @@ export const Navbar = ({
         <div className="flex items-center gap-[30px]">
           <div className="cursor-pointer">
             <a
-              href="tel:+380989797617"
+              href="tel:+380669928410"
               onClick={() => sendGAEvent("event", "main_phone_click")}
             >
               <PhoneIcon />
