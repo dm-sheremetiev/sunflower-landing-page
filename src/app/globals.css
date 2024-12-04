@@ -25,7 +25,7 @@ body {
 }
 
 .blurred-backdrop {
-  backdrop-filter: blur(15px)
+  backdrop-filter: blur(15px);
 }
 
 @keyframes rotation {
