@@ -13,8 +13,8 @@ export default function Preloader() {
       document.body.style.overflow = ""; // Включаем скролл
 
       setIsFading(true);
-      setTimeout(() => setIsVisible(false), 500);
-    }, 1500);
+      setTimeout(() => setIsVisible(false), 1500);
+    }, 2100);
 
     return () => clearTimeout(timer);
   }, []);
