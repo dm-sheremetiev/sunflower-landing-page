@@ -48,9 +48,18 @@ const OurStudios = dynamic(
   }
 );
 
+const Preloader = dynamic(
+  () => import("@/app/components/preloader/preloader"),
+  {
+    ssr: false,
+  }
+);
+
 export default function Home() {
   return (
     <main className="w-full h-full flex flex-col items-center">
+      <Preloader />
+
       <AppProvider>
         <Header />
 
