@@ -49,7 +49,6 @@ export default function DiscountBanner() {
     >
       <div>
         <Trans
-          // className="text-black text-[25px] sm:text-[35px] md:text-[45px] font-medium text-center"
           i18nKey="discount.discount-percents"
           components={{
             customComp: (
