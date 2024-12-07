@@ -1,6 +1,6 @@
 "use client";
 
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 import { useEffect, useState } from "react";
 import { H2 } from "@/app/ui/h2/h2";
@@ -9,8 +9,6 @@ import { RotatingButton } from "../roatating-button/rotating-button";
 import { useInView } from "react-intersection-observer";
 import { useAnimation, motion } from "framer-motion";
 import { fadeInUp } from "@/app/utils/animations";
-import { sendGAEvent } from "@next/third-parties/google";
-
 export interface InstagramPost {
   id: string;
   media_type: string;
@@ -77,20 +75,6 @@ export default function InstagramSection() {
 
   const controls = useAnimation();
 
-  const discountControls = useAnimation();
-  const [refDisc, inViewDisc] = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
-
-  useEffect(() => {
-    if (inViewDisc) {
-      discountControls.start("visible");
-    } else {
-      discountControls.start("hidden");
-    }
-  }, [discountControls, inViewDisc]);
-
   const ulControls = useAnimation();
   const [refUl, inViewUl] = useInView({
     triggerOnce: true,
@@ -143,49 +127,6 @@ export default function InstagramSection() {
             {t("instagram.sunflower")}
           </p>
         </a>
-      </motion.div>
-
-      <motion.div
-        ref={refDisc}
-        className="flex flex-col items-center my-[50px] md:my-[80px]"
-        initial="hidden"
-        id="showcase"
-        animate={discountControls}
-        variants={{
-          hidden: {
-            opacity: 0,
-            y: 20,
-          },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              duration: 1,
-              ease: "easeInOut",
-            },
-          },
-        }}
-      >
-        <h2 className="text-mainRed text-[25px] sm:text-[35px] md:text-[40px] font-medium text-center">
-          {t("discount.order-inst")}
-        </h2>
-
-        <h2
-          className="text-[35px] sm:text-[50px] md:text-[60px] font-bold text-center"
-          onSelect={() => sendGAEvent("event", "discount_select")}
-        >
-          SNFLWR
-        </h2>
-
-        <Trans>
-          <h2 className="text-mainRed text-[25px] sm:text-[35px] md:text-[40px] font-medium text-center">
-            {t("discount.get-discount")}
-
-            <span className="font-bold underline">5%</span>
-
-            {t("discount.for-first-order")}
-          </h2>
-        </Trans>
       </motion.div>
 
       <motion.ul

@@ -72,5 +72,10 @@
     "mfo": "305299",
     "ipn": "3529106589",
     "phone": "+380 98 268 40 82"
+  },
+  "discount": {
+    "discount-percents": "Знижка <customComp>5%</customComp> на перше замовлення!",
+    "get-discount": "та отримуй знижку у ",
+    "for-first-order": " на перше замовлення!"
   }
 }
