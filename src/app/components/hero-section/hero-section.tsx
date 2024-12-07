@@ -28,7 +28,7 @@ export default function HeroSection() {
   return (
     <motion.div
       ref={ref}
-      className="w-full relative bg-no-repeat bg-cover bg-top flex flex-col items-center gap-[290px] pt-[376px] sm:pt-[557px] md:pt-[447px] pb-[95px] sm:pb-[135px] md:pb-[100px]"
+      className="min-h-[800px] w-full relative bg-no-repeat bg-cover bg-top flex flex-col items-center gap-[290px] pt-[376px] sm:pt-[557px] md:pt-[447px] pb-[95px] sm:pb-[135px] md:pb-[100px]"
       initial="hidden"
       animate={controls}
       variants={{
