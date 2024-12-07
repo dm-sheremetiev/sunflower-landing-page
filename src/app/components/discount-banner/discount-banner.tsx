@@ -25,8 +25,6 @@ export default function DiscountBanner() {
     }
   }, [discountControls, inView]);
 
-  console.log(t("discount.discount-percents"));
-
   return (
     <motion.div
       ref={refDisc}
