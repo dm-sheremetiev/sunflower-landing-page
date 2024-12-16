@@ -62,9 +62,9 @@
     "social-networks": "Соціальні мережі:"
   },
   "discount": {
-    "order-inst": "Замовляй у INSTAGRAM з промокодом:",
-    "get-discount": "та отримуй знижку у ",
-    "for-first-order": " на перше замовлення!"
+    "discount-percents": "<h2>Знижка <customComp>5%</customComp> на перше замовлення!</h2>",
+    "order-in-instagram": "<h2>Для отримання замовляй у <customComp>INSTAGRAM</customComp> з промокодом:</h2>",
+    "discount-copied-successfully": "Промокод скопійовано успішно!"
   },
   "languages": {
     "ua": "UA",

@@ -72,5 +72,10 @@
     "mfo": "305299",
     "ipn": "3529106589",
     "phone": "+380 98 268 40 82"
+  },
+  "discount": {
+    "discount-percents": "<h2>Discount <customComp>5%</customComp> on your first order!</h2>",
+    "order-in-instagram": "<h2>To claim, order in <customComp>INSTAGRAM</customComp> using the promo code:</h2>",
+    "discount-copied-successfully": "Promo code copied successfully!"
   }
 }

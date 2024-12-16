@@ -55,6 +55,13 @@ const Preloader = dynamic(
   }
 );
 
+const DiscountBanner = dynamic(
+  () => import("@/app/components/discount-banner/discount-banner"),
+  {
+    ssr: false,
+  }
+);
+
 export default function Home() {
   return (
     <main className="w-full h-full flex flex-col items-center">
@@ -64,6 +71,8 @@ export default function Home() {
         <Header />
 
         <HeroSection />
+
+        <DiscountBanner />
 
         <InstagramSection />
 
