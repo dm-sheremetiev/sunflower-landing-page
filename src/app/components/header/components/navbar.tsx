@@ -13,6 +13,7 @@ import { sendGAEvent } from "@next/third-parties/google";
 interface Props {
   isMenuVisible: boolean;
   isExternal?: boolean;
+  isHoliday?: boolean;
   showMenu: () => void;
   hideMenu: () => void;
 }
@@ -43,6 +44,7 @@ export const Navbar = ({
             isMenuVisible={isMenuVisible}
             changeLanguage={changeLanguage}
             isExternal={isExternal}
+            isHoliday
           />
         </div>
 
@@ -79,6 +81,7 @@ export const Navbar = ({
           hideMenu={hideMenu}
           changeLanguage={changeLanguage}
           isExternal={isExternal}
+          isHoliday
         />
       </div>
     </div>
