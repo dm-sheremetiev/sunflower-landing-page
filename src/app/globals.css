@@ -37,3 +37,31 @@ body {
 .animate-rotation {
   animation: rotation 15s linear infinite;
 }
+
+@keyframes neonBlink {
+  0% {
+    color: black;
+    text-shadow: none;
+  }
+
+  50% {
+    color: #F9462F; /* Основной цвет */
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.4),
+                 0 0 10px rgba(255, 0, 0, 0.4);
+  }
+
+  75% { /* Добавлен плавный переход */
+    color: #7A1D14; /* Тёмно-красный перед исчезновением */
+    text-shadow: 0 0 3px rgba(255, 0, 0, 0.2),
+                 0 0 6px rgba(255, 0, 0, 0.2);
+  }
+
+  100% {
+    color: black;
+    text-shadow: none;
+  }
+}
+
+.neon-text {
+  animation: neonBlink 2s infinite;
+}

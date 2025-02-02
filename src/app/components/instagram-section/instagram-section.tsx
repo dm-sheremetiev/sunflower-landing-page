@@ -9,6 +9,7 @@ import { RotatingButton } from "../roatating-button/rotating-button";
 import { useInView } from "react-intersection-observer";
 import { useAnimation, motion } from "framer-motion";
 import { fadeInUp } from "@/app/utils/animations";
+import axios from "axios";
 export interface InstagramPost {
   id: string;
   media_type: string;
@@ -26,9 +27,9 @@ export default function InstagramSection() {
   useEffect(() => {
     async function getInstagramMedia() {
       try {
-        const res: { data?: InstagramPost[]; error?: string } = await fetch(
+        const res: { data?: InstagramPost[]; error?: string } = await axios.get(
           "/api/instagram"
-        ).then((res) => res.json());
+        ).then((res) => res.data);
 
         // const token = process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN;
 
