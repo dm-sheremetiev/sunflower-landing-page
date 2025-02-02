@@ -39,7 +39,7 @@ export const ProductCard = ({ product }: Props) => {
           </div>
 
           <ul className="flex flex-col gap-1">
-            {variety.map((varr, index) => (
+            {variety?.map((varr, index) => (
               <li key={varr.quantity} className="flex flex-col">
                 <div className="flex justify-between text-xs md:text-sm break-words gap-2">
                   <div>{varr.quantity}</div>
