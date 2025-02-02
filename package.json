@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "@next/third-parties": "^15.0.2",
+    "axios": "^1.7.9",
     "classnames": "^2.5.1",
     "framer-motion": "^11.11.10",
+    "google-auth-library": "^9.15.1",
+    "google-spreadsheet": "^4.1.4",
     "i18next": "^23.16.2",
     "lottie-react": "^2.4.0",
     "next": "15.0.0",
@@ -21,6 +24,7 @@
     "react-i18next": "^15.1.0",
     "react-intersection-observer": "^9.13.1",
     "react-lazy-load-image-component": "^1.6.2",
+    "react-spinners": "^0.15.0",
     "tailwind-override": "^0.6.1"
   },
   "devDependencies": {

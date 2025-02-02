@@ -6,7 +6,8 @@
     "delivery": "Delivery",
     "contacts": "Contacts",
     "order-bouquet": "Order a bouquet",
-    "public-offer": "Public Offer Agreement"
+    "public-offer": "Public Offer Agreement",
+    "holiday-offers": "Valentine's Day"
   },
   "hero": {
     "history": "Here starts your flower tale"
@@ -77,5 +78,23 @@
     "discount-percents": "<h2>Discount <customComp>5%</customComp> on your first order!</h2>",
     "order-in-instagram": "<h2>To claim, order in <customComp>INSTAGRAM</customComp> using the promo code:</h2>",
     "discount-copied-successfully": "Promo code copied successfully!"
+  },
+  "holiday": {
+    "holiday-find": "<h2>Find your perfect bouquet for <customComp>Valentine's Day!</customComp></h2>",
+    "holiday-scroll": "Scroll down and choose",
+    "note": "*The price is indicated for the number of flowers in the bouquet, including packaging but excluding delivery.",
+    "note-2": "**The photo shows only the type of flower. In reality, the arrangement may differ in size and shape.",
+    "for-order": "To place an order, send the product code to us on Instagram: ",
+    "choose-type": "Choose the desired type of arrangement",
+    "mono-bouquet": "Mono Bouquets",
+    "mono-box": "Mono Boxes",
+    "mono-bucket": "Mono Baskets",
+    "mixed-bouquet": "Mixed Bouquets",
+    "mixed-box": "Mixed Boxes",
+    "mixed-bucket": "Mixed Baskets",
+    "title": "Title",
+    "quantity": "Variety",
+    "price": "Price",
+    "code": "Product Code"
   }
 }
