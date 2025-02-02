@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack(config: { module: { rules: { test: RegExp; use: string[]; }[]; }; }) {
+  webpack(config: { module: { rules: { test: RegExp; use: string[] }[] } }) {
     config.module.rules.push({
       test: /\.svg$/,
       use: ["@svgr/webpack"],
@@ -14,6 +14,11 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
     NEXT_PUBLIC_INSTAGRAM_API_URL: process.env.NEXT_PUBLIC_INSTAGRAM_API_URL,
+    NEXT_PUBLIC_GOOGLE_CLIENT_ID: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+    NEXT_PUBLIC_GOOGLE_SHEET_ID: process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID,
+    NEXT_PUBLIC_GOOGLE_CLIENT_EMAIL:
+      process.env.NEXT_PUBLIC_GOOGLE_CLIENT_EMAIL,
+    NEXT_PUBLIC_GOOGLE_PRIVATE_KEY: process.env.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY,
     NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN:
       process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN,
   },
