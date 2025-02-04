@@ -65,7 +65,8 @@
   "discount": {
     "discount-percents": "<h2>Знижка <customComp>5%</customComp> на перше замовлення!</h2>",
     "order-in-instagram": "<h2>Для отримання замовляй у <customComp>INSTAGRAM</customComp> з промокодом:</h2>",
-    "discount-copied-successfully": "Промокод скопійовано успішно!"
+    "discount-copied-successfully": "Промокод скопійовано успішно!",
+    "discount-off": "**Знижка не діє у святковий період"
   },
   "languages": {
     "ua": "UA",

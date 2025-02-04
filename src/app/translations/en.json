@@ -77,7 +77,8 @@
   "discount": {
     "discount-percents": "<h2>Discount <customComp>5%</customComp> on your first order!</h2>",
     "order-in-instagram": "<h2>To claim, order in <customComp>INSTAGRAM</customComp> using the promo code:</h2>",
-    "discount-copied-successfully": "Promo code copied successfully!"
+    "discount-copied-successfully": "Promo code copied successfully!",
+    "discount-off": "**The discount does not apply during the holiday period"
   },
   "holiday": {
     "holiday-find": "<h2>Find your perfect bouquet for <customComp>Valentine's Day!</customComp></h2>",

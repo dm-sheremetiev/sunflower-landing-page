@@ -96,6 +96,10 @@ export default function DiscountBanner() {
             <CopyIcon />
           </button>
         </div>
+        <div className="w-full flex justify-center">
+          <p className="self-start text-left">{t("discount.discount-off")}</p>
+        </div>
+
         <Toaster />
       </div>
     </motion.div>
