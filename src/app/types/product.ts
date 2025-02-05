@@ -17,7 +17,9 @@ export type TypeOfProduct =
   | "mono-box"
   | "mixed-bouquet"
   | "mixed-bucket"
-  | "mixed-box";
+  | "mixed-box"
+  | "balloons"
+  | "xxl";
 
 export interface ProductType {
   typeOfProduct: TypeOfProduct;
