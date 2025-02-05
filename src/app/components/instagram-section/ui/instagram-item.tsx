@@ -28,6 +28,7 @@ export const InstagramItem = ({
       target="_blank"
       rel="noreferrer"
       onClick={() => sendGAEvent("event", "instagram_item_click")}
+      className="relative"
     >
       <LazyLoadImage
         width="100%"
