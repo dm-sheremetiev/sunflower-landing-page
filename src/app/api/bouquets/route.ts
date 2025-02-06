@@ -43,7 +43,7 @@ export async function GET(req: NextRequest) {
       (searchParams.get("type") as TypeOfProduct) || "mono-bouquet";
 
     const doc = new GoogleSpreadsheet(sheetId, jwt);
-    
+
     await doc.loadInfo();
 
     const sheetIndexMap: Record<TypeOfProduct, number> = {
@@ -53,6 +53,8 @@ export async function GET(req: NextRequest) {
       "mixed-bouquet": 3,
       "mixed-box": 4,
       "mixed-bucket": 5,
+      balloons: 6,
+      xxl: 7,
     };
 
     // Используем соответствующий индекс или 0 по умолчанию
@@ -64,6 +66,8 @@ export async function GET(req: NextRequest) {
 
     const formattedData: Record<string, any> = {};
 
+    console.log(rows[0]);
+
     rows.forEach((row) => {
       const name = row.get("назва") as string; // Используем row.get()
       const category = row.get("категорія") as string;
@@ -71,13 +75,14 @@ export async function GET(req: NextRequest) {
       const quantity = row.get("кол во") as string;
       const price = parseFloat(row.get("ціна букет") as string);
       const photoId = row.get("Google Drive ID") as string;
-      const formattedPhotoId = photoId.split("&")[0];
+      const formattedPhotoId = photoId?.split("&")[0];
 
       const formattedPrice = price.toLocaleString("uk-UA", {
         style: "currency",
         currency: "UAH",
         minimumFractionDigits: 0,
       });
+
 
       const photo = photoId
         ? `https://lh3.googleusercontent.com/d/${formattedPhotoId}=s1000`

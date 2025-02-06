@@ -96,6 +96,9 @@
     "title": "Title",
     "quantity": "Variety",
     "price": "Price",
-    "code": "Product Code"
+    "code": "Product Code",
+
+    "xxl": "XXL Compositions",
+    "balloons": "Helium Balloons"
   }
 }

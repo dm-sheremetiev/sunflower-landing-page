@@ -23,6 +23,11 @@ export const SelectionButtons = ({ selectedType, setSelectedType }: Props) => {
   const mixedTypes = newTypes.filter((item) =>
     item.typeOfProduct.includes("mixed")
   );
+  const otherTypes = newTypes.filter(
+    (item) =>
+      !item.typeOfProduct.includes("mixed") &&
+      !item.typeOfProduct.includes("mono")
+  );
 
   return (
     <div className="w-full flex items-center flex-col gap-3 px-[15px] md:px-[45px] xl:px-[0px]">
@@ -44,6 +49,17 @@ export const SelectionButtons = ({ selectedType, setSelectedType }: Props) => {
 
         <div className="flex items-center gap-2">
           {mixedTypes.map((tp) => (
+            <SelectionButton
+              key={tp.title}
+              typeOfProduct={tp}
+              setSelectedType={setSelectedType}
+              selectedType={selectedType}
+            />
+          ))}
+        </div>
+
+        <div className="flex items-center gap-2 mx-auto">
+          {otherTypes.map((tp) => (
             <SelectionButton
               key={tp.title}
               typeOfProduct={tp}
