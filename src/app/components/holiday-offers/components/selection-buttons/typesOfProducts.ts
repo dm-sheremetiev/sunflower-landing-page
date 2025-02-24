@@ -3,6 +3,10 @@ import { t } from "i18next";
 
 export const typesOfProduct: ProductType[] = [
   {
+    typeOfProduct: "tulips",
+    title: t("holiday.tulips"),
+  },
+  {
     typeOfProduct: "mono-bouquet",
     title: t("holiday.mono-bouquet"),
   },
@@ -26,10 +30,10 @@ export const typesOfProduct: ProductType[] = [
     typeOfProduct: "mixed-bucket",
     title: t("holiday.mixed-bucket"),
   },
-  {
-    typeOfProduct: "balloons",
-    title: t("holiday.balloons"),
-  },
+  // {
+  //   typeOfProduct: "balloons",
+  //   title: t("holiday.balloons"),
+  // },
   {
     typeOfProduct: "xxl",
     title: t("holiday.xxl"),

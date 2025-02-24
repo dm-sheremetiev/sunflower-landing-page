@@ -12,13 +12,13 @@ export interface ProductVariety {
 }
 
 export type TypeOfProduct =
+  | "tulips"
   | "mono-bouquet"
   | "mono-bucket"
   | "mono-box"
   | "mixed-bouquet"
   | "mixed-bucket"
   | "mixed-box"
-  | "balloons"
   | "xxl";
 
 export interface ProductType {

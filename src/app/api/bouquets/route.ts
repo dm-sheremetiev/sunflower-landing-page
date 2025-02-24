@@ -40,20 +40,20 @@ export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
     const type: TypeOfProduct =
-      (searchParams.get("type") as TypeOfProduct) || "mono-bouquet";
+      (searchParams.get("type") as TypeOfProduct) || "tulips";
 
     const doc = new GoogleSpreadsheet(sheetId, jwt);
 
     await doc.loadInfo();
 
     const sheetIndexMap: Record<TypeOfProduct, number> = {
-      "mono-bouquet": 0,
-      "mono-box": 1,
-      "mono-bucket": 2,
-      "mixed-bouquet": 3,
-      "mixed-box": 4,
-      "mixed-bucket": 5,
-      balloons: 6,
+      "tulips": 0,
+      "mono-bouquet": 1,
+      "mono-box": 2,
+      "mono-bucket": 3,
+      "mixed-bouquet": 4,
+      "mixed-box": 5,
+      "mixed-bucket": 6,
       xxl: 7,
     };
 
