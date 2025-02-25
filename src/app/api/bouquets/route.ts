@@ -47,7 +47,7 @@ export async function GET(req: NextRequest) {
     await doc.loadInfo();
 
     const sheetIndexMap: Record<TypeOfProduct, number> = {
-      "tulips": 0,
+      tulips: 0,
       "mono-bouquet": 1,
       "mono-box": 2,
       "mono-bucket": 3,
@@ -66,8 +66,6 @@ export async function GET(req: NextRequest) {
 
     const formattedData: Record<string, any> = {};
 
-    console.log(rows[0]);
-
     rows.forEach((row) => {
       const name = row.get("назва") as string; // Используем row.get()
       const category = row.get("категорія") as string;
@@ -82,7 +80,6 @@ export async function GET(req: NextRequest) {
         currency: "UAH",
         minimumFractionDigits: 0,
       });
-
 
       const photo = photoId
         ? `https://lh3.googleusercontent.com/d/${formattedPhotoId}=s1000`
