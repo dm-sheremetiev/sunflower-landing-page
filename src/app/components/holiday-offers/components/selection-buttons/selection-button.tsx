@@ -16,7 +16,7 @@ export const SelectionButton = ({
   return (
     <button
       className={cn(
-        "border border-mainRed text-black px-4 py-2 rounded-xl hover:bg-mainRed hover:text-white text-sm sm:text-base md:text-lg font-medium transition-all duration-300 ease-in-out shadow-md hover:shadow-lg active:scale-95",
+        "border border-mainRed text-black px-4 py-2 rounded-xl hover:bg-mainRed hover:text-white text-sm sm:text-base md:text-lg font-medium transition-all duration-300 ease-in-out shadow-md hover:shadow-lg active:scale-95 break-words",
         {
           "border-mainRed bg-mainRed text-white":
             selectedType === typeOfProduct.typeOfProduct,

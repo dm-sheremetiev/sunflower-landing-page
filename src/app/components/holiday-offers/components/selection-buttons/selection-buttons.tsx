@@ -17,11 +17,22 @@ export const SelectionButtons = ({ selectedType, setSelectedType }: Props) => {
     title: t(`holiday.${type.typeOfProduct}`),
   }));
 
-  const monoTypes = newTypes.filter((item) =>
-    item.typeOfProduct.includes("mono")
+  // const tulips = newTypes.filter((item) =>
+  //   item.typeOfProduct.includes("tulips")
+  // );
+  const monoTypes = newTypes.filter(
+    (item) =>
+      item.typeOfProduct.includes("mono") ||
+      item.typeOfProduct.includes("tulips")
   );
   const mixedTypes = newTypes.filter((item) =>
     item.typeOfProduct.includes("mixed")
+  );
+  const otherTypes = newTypes.filter(
+    (item) =>
+      !item.typeOfProduct.includes("mixed") &&
+      !item.typeOfProduct.includes("mono") &&
+      !item.typeOfProduct.includes("tulips")
   );
 
   return (
@@ -30,8 +41,16 @@ export const SelectionButtons = ({ selectedType, setSelectedType }: Props) => {
         {t("holiday.choose-type")}
       </p>
 
-      <div className="flex flex-col gap-3">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-col gap-3 items-center flex-wrap">
+        <div className="inline-grid md:grid-cols-4 gap-2 grid-cols-2 items-center">
+          {/* {tulips.map((tp) => (
+            <SelectionButton
+              key={tp.title}
+              typeOfProduct={tp}
+              setSelectedType={setSelectedType}
+              selectedType={selectedType}
+            />
+          ))} */}
           {monoTypes.map((tp) => (
             <SelectionButton
               key={tp.title}
@@ -40,10 +59,17 @@ export const SelectionButtons = ({ selectedType, setSelectedType }: Props) => {
               selectedType={selectedType}
             />
           ))}
-        </div>
 
-        <div className="flex items-center gap-2">
           {mixedTypes.map((tp) => (
+            <SelectionButton
+              key={tp.title}
+              typeOfProduct={tp}
+              setSelectedType={setSelectedType}
+              selectedType={selectedType}
+            />
+          ))}
+
+          {otherTypes.map((tp) => (
             <SelectionButton
               key={tp.title}
               typeOfProduct={tp}

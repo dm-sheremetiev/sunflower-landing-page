@@ -88,6 +88,7 @@
     "for-order": "To place an order, send the product code to us on Instagram: ",
     "choose-type": "Choose the desired type of arrangement",
     "mono-bouquet": "Mono Bouquets",
+    "tulips": "Tulips",
     "mono-box": "Mono Boxes",
     "mono-bucket": "Mono Baskets",
     "mixed-bouquet": "Mixed Bouquets",
@@ -96,6 +97,9 @@
     "title": "Title",
     "quantity": "Variety",
     "price": "Price",
-    "code": "Product Code"
+    "code": "Product Code",
+
+    "xxl": "XXL Compositions",
+    "balloons": "Helium Balloons"
   }
 }

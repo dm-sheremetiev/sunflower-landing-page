@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function HolidayOffers() {
   const [selectedType, setSelectedType] =
-    useState<TypeOfProduct>("mono-bouquet");
+    useState<TypeOfProduct>("tulips");
 
   return (
     <main className="w-full h-full flex flex-col items-center">
