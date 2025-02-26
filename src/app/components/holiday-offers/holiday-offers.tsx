@@ -15,7 +15,7 @@ export const metadata = {
   openGraph: {
     title: "Пропозиції до Дня Закоханих | Sun Flower",
     description:
-      "Обирайте найкращі святкові букети для коханих на День Закоханих.",
+      "Обирайте найкращі святкові букети для коханих на 8 Березня.",
     url: "https://www.sun-flower.shop/holiday-offers",
     siteName: "Sun Flower",
     type: "website",

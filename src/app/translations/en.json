@@ -7,7 +7,7 @@
     "contacts": "Contacts",
     "order-bouquet": "Order a bouquet",
     "public-offer": "Public Offer Agreement",
-    "holiday-offers": "Valentine's Day"
+    "holiday-offers": "8 of March"
   },
   "hero": {
     "history": "Here starts your flower tale"
@@ -81,7 +81,7 @@
     "discount-off": "**The discount does not apply during the holiday period"
   },
   "holiday": {
-    "holiday-find": "<h2>Find your perfect bouquet for <customComp>Valentine's Day!</customComp></h2>",
+    "holiday-find": "<h2>Find your perfect bouquet for <customComp>International Women's Day!</customComp></h2>",
     "holiday-scroll": "Scroll down and choose",
     "note": "*The price is indicated for the number of flowers in the bouquet, including packaging but excluding delivery.",
     "note-2": "**The photo shows only the type of flower. In reality, the arrangement may differ in size and shape.",
