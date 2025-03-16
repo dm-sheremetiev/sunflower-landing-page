@@ -29,7 +29,7 @@ export default function HolidayOffers() {
       <Preloader />
 
       <AppProvider>
-        <Header isExternal />
+        <Header isExternal isHoliday={false} />
 
         <HolidayBanner />
 
