@@ -14,8 +14,7 @@ export const metadata = {
   description: "Знайдіть ідеальний букет до Дня Закоханих у Sun Flower.",
   openGraph: {
     title: "Пропозиції до Дня Закоханих | Sun Flower",
-    description:
-      "Обирайте найкращі святкові букети для коханих на 8 Березня.",
+    description: "Обирайте найкращі святкові букети для коханих на 8 Березня.",
     url: "https://www.sun-flower.shop/holiday-offers",
     siteName: "Sun Flower",
     type: "website",
@@ -23,15 +22,14 @@ export const metadata = {
 };
 
 export default function HolidayOffers() {
-  const [selectedType, setSelectedType] =
-    useState<TypeOfProduct>("tulips");
+  const [selectedType, setSelectedType] = useState<TypeOfProduct>("tulips");
 
   return (
     <main className="w-full h-full flex flex-col items-center">
       <Preloader />
 
       <AppProvider>
-        <Header isExternal isHoliday />
+        <Header isExternal />
 
         <HolidayBanner />
 
