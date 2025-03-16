@@ -13,7 +13,7 @@ interface Props {
   isHoliday?: boolean;
 }
 
-export default function Header({ isExternal, isHoliday }: Props) {
+export default function Header({ isExternal }: Props) {
   const [prevScrollOffsetValue, setPrevScrollOffsetValue] = useState(0);
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
 
@@ -85,7 +85,7 @@ export default function Header({ isExternal, isHoliday }: Props) {
           showMenu={showMenu}
           hideMenu={hideMenu}
           isExternal={isExternal}
-          isHoliday={isHoliday}
+          isHoliday={false}
         />
       </div>
     </motion.header>
