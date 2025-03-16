@@ -23,6 +23,7 @@ export const Navbar = ({
   showMenu,
   hideMenu,
   isExternal,
+  isHoliday,
 }: Props) => {
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -44,7 +45,7 @@ export const Navbar = ({
             isMenuVisible={isMenuVisible}
             changeLanguage={changeLanguage}
             isExternal={isExternal}
-            isHoliday
+            isHoliday={isHoliday}
           />
         </div>
 
@@ -81,7 +82,7 @@ export const Navbar = ({
           hideMenu={hideMenu}
           changeLanguage={changeLanguage}
           isExternal={isExternal}
-          isHoliday
+          isHoliday={isHoliday}
         />
       </div>
     </div>
