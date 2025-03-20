@@ -4,10 +4,10 @@ import AppProvider from "@/app/providers/AppProvider";
 import Preloader from "../preloader/preloader";
 import Header from "../header/header";
 import { useEffect, useState } from "react";
-import HolidayBanner from "./components/holiday-banner/holiday-banner";
 import { TypeOfProduct } from "@/app/types/product";
 import { ProductsList } from "./components/products-list/products-list";
 import { SelectionButtons } from "./components/selection-buttons/selection-buttons";
+import DiscountBanner from "../discount-banner/discount-banner";
 
 export const metadata = {
   title: "Онлайн-вітрина | Sun Flower",
@@ -36,24 +36,24 @@ const validTypes: TypeOfProduct[] = [
 export default function HolidayOffers() {
   const [selectedType, setSelectedType] = useState<TypeOfProduct>("tulips");
 
-  const handleHashChange = () => {
-    let hashValue = window.location.hash.slice(1); // Убираем символ "#"
-    // Если hash не задан или его значение не входит в список допустимых, устанавливаем значение по умолчанию
-    if (!hashValue || !validTypes.includes(hashValue as TypeOfProduct)) {
-      hashValue = "tulips";
+  const updateTypeFromQuery = () => {
+    const searchParams = new URLSearchParams(window.location.search);
+    let typeFromQuery = searchParams.get("type") || "tulips";
+    if (!validTypes.includes(typeFromQuery as TypeOfProduct)) {
+      typeFromQuery = "tulips";
     }
-    setSelectedType(hashValue as TypeOfProduct);
+    setSelectedType(typeFromQuery as TypeOfProduct);
   };
 
   useEffect(() => {
-    // При первой загрузке
-    handleHashChange();
+    // Устанавливаем значение при первой загрузке
+    updateTypeFromQuery();
 
-    // Если необходимо отслеживать изменения hash (например, при навигации "назад"/"вперёд")
-    window.addEventListener("hashchange", handleHashChange);
+    // Если нужно отслеживать изменения query-параметров при навигации
+    window.addEventListener("popstate", updateTypeFromQuery);
 
     return () => {
-      window.removeEventListener("hashchange", handleHashChange);
+      window.removeEventListener("popstate", updateTypeFromQuery);
     };
   }, []);
 
@@ -64,7 +64,7 @@ export default function HolidayOffers() {
       <AppProvider>
         <Header isExternal isHoliday />
 
-        <HolidayBanner />
+        <DiscountBanner />
 
         <SelectionButtons
           selectedType={selectedType}

@@ -40,7 +40,7 @@ export const ProductsList = ({ selectedType }: Props) => {
     if (selectedType) {
       init();
     }
-  }, [selectedType]);
+  }, [selectedType,]);
 
   return !products?.length || isLoading ? (
     <div className="w-full flex items-center justify-center mt-[80px]">
@@ -49,10 +49,10 @@ export const ProductsList = ({ selectedType }: Props) => {
   ) : (
     <section className="xl:container w-full mt-[20px] px-[15px] md:px-[45px] xl:px-[0px] mb-[100px] sm:mb-[150px] md:mb-[200px]">
       <div className="flex flex-col gap-3">
-        <h2 className="text-black text-[15px] sm:text-[25px] font-medium w-full">
+        <h2 className="text-black text-[12px] sm:text-[20px] font-medium w-full">
           {t("holiday.note")}
         </h2>
-        <h2 className="text-black text-[15px] sm:text-[25px] font-medium w-full">
+        <h2 className="text-black text-[12px] sm:text-[20px] font-medium w-full">
           {t("holiday.note-2")}
         </h2>
 

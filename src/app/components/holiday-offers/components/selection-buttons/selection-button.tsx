@@ -15,8 +15,10 @@ export const SelectionButton = ({
 }: Props) => {
   const handleClick = () => {
     setSelectedType(typeOfProduct.typeOfProduct);
-    // Обновляем hash в URL без перезагрузки страницы
-    window.history.replaceState(null, "", `#${typeOfProduct.typeOfProduct}`);
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set("type", typeOfProduct.typeOfProduct);
+    // Обновляем URL без перезагрузки страницы
+    window.history.replaceState(null, "", "?" + searchParams.toString());
   };
 
   return (

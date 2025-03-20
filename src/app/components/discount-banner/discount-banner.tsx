@@ -28,7 +28,7 @@ export default function DiscountBanner() {
   return (
     <motion.div
       ref={refDisc}
-      className="w-full mt-[100px] sm:mt-[150px] md:mt-[200px] px-[25px] md:px-[45px] xl:px-[0px] bg-mainPink flex flex-col py-[35px] md:py-[47px] items-center"
+      className="w-full mt-[100px] sm:mt-[150px] md:mt-[200px] px-[25px] md:px-[45px] xl:px-[0px] bg-mainPink flex flex-col py-[35px] items-center"
       initial="hidden"
       id="showcase"
       animate={discountControls}
@@ -63,7 +63,7 @@ export default function DiscountBanner() {
         </Trans>
       </div>
 
-      <div className="mt-[25px] md:mt-[50px] flex flex-col gap-3 md:gap-5 items-center">
+      <div className="mt-[25px] md:mt-[35px] flex flex-col gap-3 md:gap-5 items-center">
         <Trans
           i18nKey="discount.order-in-instagram"
           components={{
@@ -96,9 +96,9 @@ export default function DiscountBanner() {
             <CopyIcon />
           </button>
         </div>
-        <div className="w-full flex justify-center">
+        {/* <div className="w-full flex justify-center">
           <p className="self-start text-left">{t("discount.discount-off")}</p>
-        </div>
+        </div> */}
 
         <Toaster />
       </div>
