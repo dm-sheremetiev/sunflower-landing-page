@@ -13,6 +13,12 @@ export const SelectionButton = ({
   setSelectedType,
   selectedType,
 }: Props) => {
+  const handleClick = () => {
+    setSelectedType(typeOfProduct.typeOfProduct);
+    // Обновляем hash в URL без перезагрузки страницы
+    window.history.replaceState(null, "", `#${typeOfProduct.typeOfProduct}`);
+  };
+
   return (
     <button
       className={cn(
@@ -22,7 +28,7 @@ export const SelectionButton = ({
             selectedType === typeOfProduct.typeOfProduct,
         }
       )}
-      onClick={() => setSelectedType(typeOfProduct.typeOfProduct)}
+      onClick={handleClick}
     >
       {typeOfProduct.title}
     </button>

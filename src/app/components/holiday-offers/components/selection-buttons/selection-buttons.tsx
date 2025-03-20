@@ -17,9 +17,6 @@ export const SelectionButtons = ({ selectedType, setSelectedType }: Props) => {
     title: t(`holiday.${type.typeOfProduct}`),
   }));
 
-  // const tulips = newTypes.filter((item) =>
-  //   item.typeOfProduct.includes("tulips")
-  // );
   const monoTypes = newTypes.filter(
     (item) =>
       item.typeOfProduct.includes("mono") ||

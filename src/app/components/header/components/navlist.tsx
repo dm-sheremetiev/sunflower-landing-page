@@ -48,7 +48,7 @@ export const NavList = ({
             >
               <div onClick={onClick}>
                 <a
-                  href={`${isExternal ? "/" : ""}${"holiday-offers"}`}
+                  href={`${isExternal ? "/" : ""}${"products"}`}
                   className={classNames(
                     "hover:text-mainRed transition-all neon-text text-mainRed",
                     {
@@ -57,7 +57,7 @@ export const NavList = ({
                     }
                   )}
                 >
-                  {t("info.holiday-offers")}
+                  {t("info.offers")}
                 </a>
               </div>
 
@@ -110,10 +110,10 @@ export const NavList = ({
               >
                 <div onClick={onClick}>
                   <a
-                    href={`${isExternal ? "/" : ""}${"holiday-offers"}`}
+                    href={`${isExternal ? "/" : ""}${"products"}`}
                     className="text-black text-[16px] hover:text-mainRed transition-all neon-text"
                   >
-                    {t("info.holiday-offers")}
+                    {t("info.offers")}
                   </a>
                 </div>
 

@@ -68,7 +68,7 @@ export default function Home() {
       <Preloader />
 
       <AppProvider>
-        <Header isHoliday={false} />
+        <Header isHoliday />
 
         <HeroSection />
 
