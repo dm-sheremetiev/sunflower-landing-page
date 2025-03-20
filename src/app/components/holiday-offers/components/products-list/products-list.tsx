@@ -43,7 +43,7 @@ export const ProductsList = ({ selectedType }: Props) => {
   }, [selectedType]);
 
   return !products?.length || isLoading ? (
-    <div className="w-full flex items-center justify-center mt-[80px] min-h-[500px]">
+    <div className="w-full flex items-center justify-center my-[100px]">
       <RiseLoader color="#F9462F" />
     </div>
   ) : (
