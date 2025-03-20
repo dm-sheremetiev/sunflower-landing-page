@@ -48,12 +48,13 @@ export async function GET(req: NextRequest) {
 
     const sheetIndexMap: Record<TypeOfProduct, number> = {
       tulips: 0,
-      "mono-bouquet": 1,
-      "mono-box": 2,
-      "mono-bucket": 3,
-      "mixed-bouquet": 4,
-      "mixed-box": 5,
-      "mixed-bucket": 6,
+      roses: 1,
+      "mono-bouquet": 2,
+      "mono-box": 3,
+      "mono-bucket": 4,
+      "mixed-bouquet": 5,
+      "mixed-box": 6,
+      "mixed-bucket": 7,
       xxl: 7,
     };
 
