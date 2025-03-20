@@ -55,7 +55,7 @@ export async function GET(req: NextRequest) {
       "mixed-bouquet": 5,
       "mixed-box": 6,
       "mixed-bucket": 7,
-      xxl: 7,
+      xxl: 8,
     };
 
     // Используем соответствующий индекс или 0 по умолчанию
