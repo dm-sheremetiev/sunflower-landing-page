@@ -18,6 +18,7 @@ export type TypeOfProduct =
   | "mono-box"
   | "mixed-bouquet"
   | "mixed-bucket"
+  | "roses"
   | "mixed-box"
   | "xxl";
 

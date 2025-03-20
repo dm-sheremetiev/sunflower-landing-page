@@ -23,7 +23,8 @@ export const SelectionButtons = ({ selectedType, setSelectedType }: Props) => {
   const monoTypes = newTypes.filter(
     (item) =>
       item.typeOfProduct.includes("mono") ||
-      item.typeOfProduct.includes("tulips")
+      item.typeOfProduct.includes("tulips") ||
+      item.typeOfProduct.includes("roses")
   );
   const mixedTypes = newTypes.filter((item) =>
     item.typeOfProduct.includes("mixed")
@@ -32,7 +33,8 @@ export const SelectionButtons = ({ selectedType, setSelectedType }: Props) => {
     (item) =>
       !item.typeOfProduct.includes("mixed") &&
       !item.typeOfProduct.includes("mono") &&
-      !item.typeOfProduct.includes("tulips")
+      !item.typeOfProduct.includes("tulips") &&
+      !item.typeOfProduct.includes("roses")
   );
 
   return (

@@ -7,6 +7,10 @@ export const typesOfProduct: ProductType[] = [
     title: t("holiday.tulips"),
   },
   {
+    typeOfProduct: "roses",
+    title: t("holiday.roses"),
+  },
+  {
     typeOfProduct: "mono-bouquet",
     title: t("holiday.mono-bouquet"),
   },
