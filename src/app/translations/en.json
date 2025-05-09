@@ -76,6 +76,8 @@
   },
   "discount": {
     "discount-percents": "<h2>Discount <customComp>5%</customComp> on your first order!</h2>",
+    "discount-heading-mothers-day": "<h2>We are accepting pre-orders for <customComp>Mother’s Day</customComp></h2>",
+    "order-in-instagram-mothers-day": "<h2>Choose and order via <customComp>INSTAGRAM</customComp></h2>",
     "order-in-instagram": "<h2>To claim, order in <customComp>INSTAGRAM</customComp> using the promo code:</h2>",
     "discount-copied-successfully": "Promo code copied successfully!",
     "discount-off": "**The discount does not apply during the holiday period"

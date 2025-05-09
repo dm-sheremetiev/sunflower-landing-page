@@ -64,7 +64,9 @@
   },
   "discount": {
     "discount-percents": "<h2>Знижка <customComp>5%</customComp> на перше замовлення!</h2>",
+    "discount-heading-mothers-day": "<h2>Приймаємо передзамовлення до <customComp>Дня Матері</customComp></h2>",
     "order-in-instagram": "<h2>Для отримання замовляй у <customComp>INSTAGRAM</customComp> з промокодом:</h2>",
+    "order-in-instagram-mothers-day": "<h2>Обирай та замовляй у <customComp>INSTAGRAM</customComp></h2>",
     "discount-copied-successfully": "Промокод скопійовано успішно!",
     "discount-off": "**Знижка не діє у святковий період"
   },
