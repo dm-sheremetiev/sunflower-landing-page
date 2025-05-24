@@ -1,3 +1,5 @@
+"use client";
+
 import { LanguageSelector } from "./language-selector";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/app/utils/styles";
@@ -52,7 +54,8 @@ export const NavList = ({
                   className={classNames(
                     "hover:text-mainRed transition-all neon-text text-mainRed",
                     {
-                      "text-[12px] md:text-[13px] lg:text-[20px] xl:text-[22px]": isHoliday,
+                      "text-[12px] md:text-[13px] lg:text-[20px] xl:text-[22px]":
+                        isHoliday,
                       "text-[16px] lg:text-[22px]": !isHoliday,
                     }
                   )}
@@ -67,7 +70,8 @@ export const NavList = ({
                   className={classNames(
                     "hover:text-mainRed transition-all text-black",
                     {
-                      "text-[12px] md:text-[13px] lg:text-[20px] xl:text-[22px]": isHoliday,
+                      "text-[12px] md:text-[13px] lg:text-[20px] xl:text-[22px]":
+                        isHoliday,
                       "text-[16px] lg:text-[22px]": !isHoliday,
                     }
                   )}
@@ -83,7 +87,8 @@ export const NavList = ({
                 className={classNames(
                   "hover:text-mainRed transition-all text-black",
                   {
-                    "text-[12px] md:text-[13px] lg:text-[20px] xl:text-[22px]": isHoliday,
+                    "text-[12px] md:text-[13px] lg:text-[20px] xl:text-[22px]":
+                      isHoliday,
                     "text-[16px] lg:text-[22px]": !isHoliday,
                   }
                 )}
