@@ -62,9 +62,9 @@ export default function HolidayOffers() {
       <Preloader />
 
       <AppProvider>
-        <Header isExternal isHoliday />
+        <Header isExternal />
 
-        <DiscountBanner isHoliday />
+        <DiscountBanner />
 
         <SelectionButtons
           selectedType={selectedType}
