@@ -97,6 +97,30 @@ export default function DeliveryConditions() {
       <div className="mx-auto md:mx-0 mt-[40px] md:mt-[50px] lg:mt-[60px] md:self-end">
         <Button isRed location="delivery_conditions" />
       </div>
+
+      <div className="flex flex-col gap-5">
+        <a
+          className="flex flex-row gap-[10px] items-center w-fit"
+          href="/payment-details"
+          target="_blank"
+        >
+          <p className="text-[14px] md:text-[16px] lg:text-[25px] text-mainBlack hover:text-mainRed transition-all font-medium">
+            {t("info.payment-details")}
+          </p>
+        </a>
+
+        <div>
+          <a
+            className="flex flex-row gap-[10px] items-center w-fit"
+            href="/public-offer"
+            target="_blank"
+          >
+            <p className="text-[14px] md:text-[16px] lg:text-[25px] text-mainBlack hover:text-mainRed transition-all font-medium">
+              {t("info.public-offer")}
+            </p>
+          </a>
+        </div>
+      </div>
     </motion.section>
   );
 }
