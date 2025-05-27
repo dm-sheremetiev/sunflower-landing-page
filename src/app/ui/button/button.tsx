@@ -14,7 +14,7 @@ export const Button = ({ isRed, location }: Props) => {
   const { t } = useTranslation();
 
   return (
-    <a href="https://www.instagram.com/sun.flower.kyiv" target="_blank" className="w-fit h-fit block">
+    <a href="https://t.me/sun_flower_kyiv" target="_blank" className="w-fit h-fit block">
       <button
         className="flex gap-[16px] group relative"
         onClick={() => sendGAEvent("event", "order_bouquet", { location })}
