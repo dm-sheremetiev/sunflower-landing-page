@@ -2,7 +2,7 @@
 
 import AppProvider from "@/app/providers/AppProvider";
 import { useTranslation } from "react-i18next";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import imageCompression from "browser-image-compression";
 import heic2any from "heic2any";
@@ -10,7 +10,11 @@ import heic2any from "heic2any";
 export default function PaymentDetails() {
   const { t } = useTranslation();
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    setIsLoading(true);
+
     e.preventDefault();
 
     const form = e.currentTarget;
@@ -97,6 +101,8 @@ export default function PaymentDetails() {
     } catch (err) {
       console.error(err);
       toast.error("Щось пішло не так. Спробуйте ще раз пізніше.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -199,7 +205,8 @@ export default function PaymentDetails() {
 
             <button
               type="submit"
-              className="w-full bg-white text-black border hover:border-mainPink hover:bg-mainPink hover:text-mainRed font-semibold py-2 px-4 rounded-xl transition duration-200"
+              disabled={isLoading}
+              className="w-full disabled:opacity-50 bg-white text-black border hover:border-mainPink hover:bg-mainPink hover:text-mainRed font-semibold py-2 px-4 rounded-xl transition duration-200"
             >
               {t("feedback.button-send")}
             </button>
