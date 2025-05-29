@@ -121,7 +121,7 @@ export default function RootLayout({
       <body
         className={`${cassandra.variable} ${gilroy.variable} font-gilroy bg-white text-mainBlack`}
       >
-        <script
+        {/* <script
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,t,u,c){
@@ -133,7 +133,7 @@ export default function RootLayout({
                 j.parentNode.insertBefore(s,j)
               })(window, document, "script","https://chat.key.live/bundles/widget.min.js",{token:"ad043bcc-dc46-4deb-8088-9d5e24bb92f5"});`,
           }}
-        />
+        /> */}
 
         {/* Google Tag Manager */}
         <script
