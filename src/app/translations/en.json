@@ -104,5 +104,20 @@
 
     "xxl": "XXL Compositions",
     "balloons": "Helium Balloons"
+  },
+  "feedback": {
+    "feedback-title": "Feedback",
+    "feedback-description": "Have a question or issue with your order? Leave your order number, contact details, and a brief description of the situation. If everything went great — feel free to share your experience to help us improve even more.",
+    "button-send": "Send",
+    "your-name": "Your name",
+    "your-contacts": "Contact details",
+    "contacts-placeholder": "Phone number, social media link, username, etc.",
+    "order-number": "Order number",
+    "order-number-placeholder": "If you don't have an order number, enter \"-\"",
+    "message": "Message",
+    "message-placeholder": "Describe the issue, question, or suggestion.",
+    "max-size": "Max. file size: 5 MB",
+    "photo-optional": "Photo (optional)",
+    "loading": "Loading..."
   }
 }
