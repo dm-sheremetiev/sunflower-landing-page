@@ -7,12 +7,8 @@ import toast, { Toaster } from "react-hot-toast";
 import imageCompression from "browser-image-compression";
 import heic2any from "heic2any";
 
-const telegramToken = process.env.TELEGRAM_BOT_TOKEN || "";
-const telegramChatId = process.env.TELEGRAM_FEEDBACK_CHAT_ID || "";
-
 export default function PaymentDetails() {
   const { t } = useTranslation();
-  const MAX_FILE_SIZE_MB = 5;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,89 +25,78 @@ export default function PaymentDetails() {
     const photoFile = (form.elements.namedItem("photo") as HTMLInputElement)
       ?.files?.[0];
 
-    const textMessage = `
-📝 Нова форма зворотного зв’язку:
-👤 Ім’я: ${name}
-📦 Номер замовлення: ${orderNumber}
-📞 Контакти: ${contacts}
-💬 Повідомлення: ${message}
+    const textMessage = `📝 Новий відгук\n\n👤Ім’я: ${name}\n📦Номер замовлення: ${orderNumber}\n📞Контакти: ${contacts}\n\n💬 Повідомлення: ${message}
     `;
 
     try {
-      // 1. Отправка текста
-      await fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: telegramChatId,
-          text: textMessage,
-        }),
-      });
+      const MAX_FILE_SIZE_MB = 5;
+      let compressedFile: File | null = null;
 
-      // 2. Обработка и отправка фото
       if (photoFile) {
         let processedFile: File = photoFile;
 
-        try {
-          // HEIC → JPEG
-          if (
-            photoFile.type === "image/heic" ||
-            photoFile.name.endsWith(".heic")
-          ) {
-            const convertedBlob = await heic2any({
-              blob: photoFile,
-              toType: "image/jpeg",
-              quality: 0.8,
-            });
-
-            processedFile = new File(
-              [convertedBlob as BlobPart],
-              "converted.jpg",
-              {
-                type: "image/jpeg",
-                lastModified: Date.now(),
-              }
-            );
-          }
-
-          // Сжатие
-          const compressed = await imageCompression(processedFile, {
-            maxSizeMB: 1.5,
-            maxWidthOrHeight: 1920,
-            useWebWorker: true,
+        // HEIC → JPEG
+        if (
+          photoFile.type === "image/heic" ||
+          photoFile.name.toLowerCase().endsWith(".heic")
+        ) {
+          const convertedBlob = await heic2any({
+            blob: photoFile,
+            toType: "image/jpeg",
+            quality: 0.8,
           });
 
-          const sizeMB = compressed.size / (1024 * 1024);
-
-          if (sizeMB <= MAX_FILE_SIZE_MB) {
-            const formData = new FormData();
-            formData.append("chat_id", telegramChatId);
-            formData.append("caption", "📷 Фото з форми зворотного зв’язку");
-            formData.append("photo", compressed);
-
-            await fetch(
-              `https://api.telegram.org/bot${telegramToken}/sendPhoto`,
-              {
-                method: "POST",
-                body: formData,
-              }
-            );
-          } else {
-            toast.error(
-              "Фото занадто велике навіть після стиснення і не було надіслане."
-            );
-          }
-        } catch (error) {
-          toast.error("Не вдалося обробити фото. Спробуйте інший формат.");
-          console.error("Image processing error:", error);
+          processedFile = new File(
+            [convertedBlob as BlobPart],
+            "converted.jpg",
+            {
+              type: "image/jpeg",
+              lastModified: Date.now(),
+            }
+          );
         }
+
+        // Сжатие
+        const compressed = await imageCompression(processedFile, {
+          maxSizeMB: 1.5,
+          maxWidthOrHeight: 1920,
+          useWebWorker: true,
+        });
+
+        const sizeMB = compressed.size / (1024 * 1024);
+        if (sizeMB <= MAX_FILE_SIZE_MB) {
+          compressedFile = new File([compressed], compressed.name, {
+            type: compressed.type,
+            lastModified: Date.now(),
+          });
+        } else {
+          toast.error(
+            "Фото занадто велике навіть після стиснення і не було надіслане."
+          );
+        }
+      }
+
+      // Подготовка и отправка на API-роут
+      const formDataToSend = new FormData();
+      formDataToSend.append("text", textMessage);
+      if (compressedFile) {
+        formDataToSend.append("photo", compressedFile);
+      }
+
+      const res = await fetch("/api/feedback", {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      if (!res.ok) {
+        throw new Error("Server error");
       }
 
       toast.success("Форму надіслано успішно!");
       form.reset();
     } catch (err) {
-      toast.error("Щось пішло не так. Спробуйте ще раз пізніше.");
       console.error(err);
+      toast.error("Щось пішло не так. Спробуйте ще раз пізніше.");
     }
   };
 
