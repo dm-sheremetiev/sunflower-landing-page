@@ -144,7 +144,6 @@ export default function PaymentDetails() {
                 type="text"
                 id="order-number"
                 name="order-number"
-                required
                 placeholder={t("feedback.order-number-placeholder")}
                 className="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:border-mainPink focus:ring-mainPink"
               />
