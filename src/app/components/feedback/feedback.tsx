@@ -208,7 +208,7 @@ export default function PaymentDetails() {
               disabled={isLoading}
               className="w-full disabled:opacity-50 bg-white text-black border hover:border-mainPink hover:bg-mainPink hover:text-mainRed font-semibold py-2 px-4 rounded-xl transition duration-200"
             >
-              {t("feedback.button-send")}
+              {isLoading ? t("feedback.loading") : t("feedback.button-send")}
             </button>
           </form>
         </div>
