@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { GoogleSpreadsheet } from "google-spreadsheet";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { JWT } from "google-auth-library";
-import { TypeOfProduct } from "@/app/types/product";
 
 const sheetId = process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID || "";
 const clientEmail = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_EMAIL || "";
@@ -36,33 +35,13 @@ interface Variety {
   price: string | number;
 }
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
-    const { searchParams } = new URL(req.url);
-    const type: TypeOfProduct =
-      (searchParams.get("type") as TypeOfProduct) || "tulips";
-
     const doc = new GoogleSpreadsheet(sheetId, jwt);
 
     await doc.loadInfo();
 
-    const sheetIndexMap: Record<TypeOfProduct, number> = {
-      tulips: 0,
-      roses: 1,
-      "mono-bouquet": 2,
-      "mono-box": 3,
-      "mono-bucket": 4,
-      "mixed-bouquet": 5,
-      "mixed-box": 6,
-      "mixed-bucket": 7,
-      xxl: 8,
-      test: 9,
-    };
-
-    // Используем соответствующий индекс или 0 по умолчанию
-    const sheetIndex = sheetIndexMap[type] ?? 0;
-
-    const sheet = doc.sheetsByIndex[sheetIndex]; // Берём нужный
+    const sheet = doc.sheetsByTitle['Test'];
 
     const rows = await sheet.getRows<SheetRow>(); // Указываем тип данных
 

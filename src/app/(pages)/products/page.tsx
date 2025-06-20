@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 
 const HolidayOffers = dynamic(
-  () => import("@/app/components/holiday-offers/holiday-offers"),
+  () => import("@/app/components/products-content/products-content"),
   {
     ssr: false,
   }

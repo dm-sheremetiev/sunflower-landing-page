@@ -20,8 +20,10 @@ export const ProductsList = ({ selectedType }: Props) => {
     try {
       setIsLoading(true);
 
+      const url = selectedType === 'test' ? "/api/bouquets/test-bouquets" : "/api/bouquets"
+
       const res: { data: Product[] } = await axios
-        .get("/api/bouquets", {
+        .get(url, {
           params: {
             type: selectedType,
           },

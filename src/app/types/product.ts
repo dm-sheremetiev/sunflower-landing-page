@@ -20,7 +20,8 @@ export type TypeOfProduct =
   | "mixed-bucket"
   | "roses"
   | "mixed-box"
-  | "xxl";
+  | "xxl"
+  | "test";
 
 export interface ProductType {
   typeOfProduct: TypeOfProduct;
