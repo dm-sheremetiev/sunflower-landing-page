@@ -40,7 +40,7 @@ export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
     const type: TypeOfProduct =
-      (searchParams.get("type") as TypeOfProduct) || "tulips";
+      (searchParams.get("type") as TypeOfProduct) ||"roses";
 
     const doc = new GoogleSpreadsheet(sheetId, jwt);
 
