@@ -3,6 +3,7 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { NextRequest, NextResponse } from "next/server";
 import { JWT } from "google-auth-library";
 import { TypeOfProduct } from "@/app/types/product";
+import { typesOfProduct } from "@/app/components/products-content/components/selection-buttons/typesOfProducts";
 
 const sheetId = process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID || "";
 const clientEmail = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_EMAIL || "";
@@ -39,8 +40,18 @@ interface Variety {
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
-    const type: TypeOfProduct =
+    
+    let type: TypeOfProduct = "roses";
+
+    const bareType: TypeOfProduct =
       (searchParams.get("type") as TypeOfProduct) ||"roses";
+
+      if (!typesOfProduct.map(t => t.typeOfProduct).includes(bareType)) {
+        type = "roses";
+      } else {
+        type = bareType;
+      }
+
 
     const doc = new GoogleSpreadsheet(sheetId, jwt);
 
@@ -60,7 +71,7 @@ export async function GET(req: NextRequest) {
     };
 
     // Используем соответствующий индекс или 0 по умолчанию
-    const sheetIndex = sheetIndexMap[type] ?? 0;
+    const sheetIndex = sheetIndexMap[type] ?? 1;
 
     const sheet = doc.sheetsByIndex[sheetIndex]; // Берём нужный
 

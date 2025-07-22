@@ -34,13 +34,13 @@ const validTypes: TypeOfProduct[] = [
 ];
 
 export default function HolidayOffers() {
-  const [selectedType, setSelectedType] = useState<TypeOfProduct>("tulips");
+  const [selectedType, setSelectedType] = useState<TypeOfProduct>("roses");
 
   const updateTypeFromQuery = () => {
     const searchParams = new URLSearchParams(window.location.search);
-    let typeFromQuery = searchParams.get("type") || "tulips";
+    let typeFromQuery = searchParams.get("type") || "roses";
     if (!validTypes.includes(typeFromQuery as TypeOfProduct)) {
-      typeFromQuery = "tulips";
+      typeFromQuery = "roses";
     }
     setSelectedType(typeFromQuery as TypeOfProduct);
   };
