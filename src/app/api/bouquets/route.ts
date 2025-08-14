@@ -58,16 +58,16 @@ export async function GET(req: NextRequest) {
     await doc.loadInfo();
 
     const sheetIndexMap: Record<TypeOfProduct, number> = {
-      tulips: 0,
-      roses: 1,
-      "mono-bouquet": 2,
-      "mono-box": 3,
-      "mono-bucket": 4,
-      "mixed-bouquet": 5,
-      "mixed-box": 6,
-      "mixed-bucket": 7,
-      xxl: 8,
-      test: 9,
+      // tulips: 0,
+      roses: 0,
+      "mono-bouquet": 1,
+      "mono-box": 2,
+      "mono-bucket": 3,
+      "mixed-bouquet": 4,
+      "mixed-box": 5,
+      "mixed-bucket": 6,
+      xxl: 7,
+      test: 8,
     };
 
     // Используем соответствующий индекс или 0 по умолчанию

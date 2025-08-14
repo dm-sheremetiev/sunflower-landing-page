@@ -12,7 +12,7 @@ export interface ProductVariety {
 }
 
 export type TypeOfProduct =
-  | "tulips"
+  // | "tulips"
   | "mono-bouquet"
   | "mono-bucket"
   | "mono-box"
