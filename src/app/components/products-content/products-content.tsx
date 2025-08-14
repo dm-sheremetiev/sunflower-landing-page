@@ -22,7 +22,7 @@ export const metadata = {
 };
 
 const validTypes: TypeOfProduct[] = [
-  "tulips",
+  // "tulips",
   "mono-bouquet",
   "mono-bucket",
   "mono-box",
