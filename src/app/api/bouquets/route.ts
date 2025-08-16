@@ -58,7 +58,7 @@ export async function GET(req: NextRequest) {
     await doc.loadInfo();
 
     const sheetIndexMap: Record<TypeOfProduct, number> = {
-      // tulips: 0,
+      tulips: 0,
       roses: 0,
       "mono-bouquet": 1,
       "mono-box": 2,

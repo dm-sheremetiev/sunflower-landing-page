@@ -2,10 +2,10 @@ import { ProductType } from "@/app/types/product";
 import { t } from "i18next";
 
 export const typesOfProduct: ProductType[] = [
-  // {
-  //   typeOfProduct: "tulips",
-  //   title: t("holiday.tulips"),
-  // },
+  {
+    typeOfProduct: "tulips",
+    title: t("holiday.tulips"),
+  },
   {
     typeOfProduct: "roses",
     title: t("holiday.roses"),
