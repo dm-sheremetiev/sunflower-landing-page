@@ -59,7 +59,7 @@ export async function GET(req: NextRequest) {
 
     const sheetIndexMap: Record<TypeOfProduct, number> = {
       tulips: 0,
-      roses: 0,
+      roses: 1,
       "mono-bouquet": 1,
       "mono-box": 2,
       "mono-bucket": 3,
