@@ -69,7 +69,9 @@
     "order-in-instagram": "<h2>Для отримання замовляй у <customComp>INSTAGRAM</customComp> з промокодом:</h2>",
     "order-in-instagram-mothers-day": "<h2>Обирай та замовляй у <customComp>INSTAGRAM</customComp></h2>",
     "discount-copied-successfully": "Промокод скопійовано успішно!",
-    "discount-off": "**Знижка не діє у святковий період"
+    "discount-off": "**Знижка не діє у святковий період",
+    "mono-hydr-35": "<h2>При замовленні на всі моно букети та моно композиції від <customComp>35</customComp> гортензій — знижка <customComp>-15%</customComp></h2>",
+    "mono-roses-10": "<h2>При замовленні на всі моно букети та моно композиції від <customComp>101</customComp> троянди — знижка <customComp>-7%</customComp>, від <customComp>301</customComp> троянди - знижка <customComp>10%</customComp></h2> "
   },
   "languages": {
     "ua": "UA",

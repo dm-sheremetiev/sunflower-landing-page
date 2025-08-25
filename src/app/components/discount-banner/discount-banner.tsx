@@ -51,6 +51,60 @@ export default function DiscountBanner({ isHoliday }: Props) {
         },
       }}
     >
+      <div className="mt-[25px] md:mt-[35px] flex flex-col gap-3 md:gap-5 items-center px-5">
+        <Trans
+          i18nKey="discount.mono-hydr-35"
+          components={{
+            customComp: (
+              <span className="text-mainRed text-[15px] sm:text-[25px] md:text-[35px] font-semibold italic text-center" />
+            ),
+            h2: (
+              <h2 className="text-black text-[15px] sm:text-[25px] md:text-[35px] font-medium text-center" />
+            ),
+          }}
+        >
+          {t("discount.mono-hydr-35")}
+        </Trans>
+
+        <Trans
+          i18nKey="discount.mono-roses-10"
+          components={{
+            customComp: (
+              <span className="text-mainRed text-[15px] sm:text-[25px] md:text-[35px] font-semibold italic text-center" />
+            ),
+            h2: (
+              <h2 className="text-black text-[15px] sm:text-[25px] md:text-[35px] font-medium text-center" />
+            ),
+          }}
+        >
+          {t("discount.mono-roses-10")}
+        </Trans>
+      </div>
+    </motion.div>
+  );
+
+  return (
+    <motion.div
+      ref={refDisc}
+      className="w-full mt-[100px] sm:mt-[150px] md:mt-[200px] px-[25px] md:px-[45px] xl:px-[0px] bg-mainPink flex flex-col py-[35px] items-center"
+      initial="hidden"
+      id="showcase"
+      animate={discountControls}
+      variants={{
+        hidden: {
+          opacity: 0,
+          y: 20,
+        },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 1,
+            ease: "easeInOut",
+          },
+        },
+      }}
+    >
       <div>
         <Trans
           i18nKey={
