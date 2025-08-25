@@ -80,7 +80,9 @@
     "order-in-instagram-mothers-day": "<h2>Choose and order via <customComp>INSTAGRAM</customComp></h2>",
     "order-in-instagram": "<h2>To claim, order in <customComp>INSTAGRAM</customComp> using the promo code:</h2>",
     "discount-copied-successfully": "Promo code copied successfully!",
-    "discount-off": "**The discount does not apply during the holiday period"
+    "discount-off": "**The discount does not apply during the holiday period",
+    "mono-hydr-35": "<h2>When ordering all mono bouquets and mono compositions from <customComp>35</customComp> hydrangeas — discount <customComp>-15%</customComp></h2>",
+    "mono-roses-10": "<h2>When ordering all mono bouquets and mono compositions from <customComp>101</customComp> roses — discount <customComp>-7%</customComp>, from <customComp>301</customComp> roses - discount <customComp>10%</customComp></h2>"
   },
   "holiday": {
     "holiday-find": "<h2>Find your perfect bouquet for <customComp>International Women's Day!</customComp></h2>",
