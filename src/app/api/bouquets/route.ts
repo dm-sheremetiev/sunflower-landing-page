@@ -67,7 +67,8 @@ export async function GET(req: NextRequest) {
       "mixed-box": 6,
       "mixed-bucket": 7,
       xxl: 8,
-      test: 9,
+      balloons: 9,
+      test: 10,
     };
 
     // Используем соответствующий индекс или 0 по умолчанию

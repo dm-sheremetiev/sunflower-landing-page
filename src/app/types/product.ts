@@ -21,6 +21,7 @@ export type TypeOfProduct =
   | "roses"
   | "mixed-box"
   | "xxl"
+  | "balloons"
   | "test";
 
 export interface ProductType {

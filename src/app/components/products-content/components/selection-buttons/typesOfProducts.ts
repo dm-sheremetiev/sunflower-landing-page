@@ -34,12 +34,13 @@ export const typesOfProduct: ProductType[] = [
     typeOfProduct: "mixed-bucket",
     title: t("holiday.mixed-bucket"),
   },
-  // {
-  //   typeOfProduct: "balloons",
-  //   title: t("holiday.balloons"),
-  // },
+
   {
     typeOfProduct: "xxl",
     title: t("holiday.xxl"),
+  },
+  {
+    typeOfProduct: "balloons",
+    title: t("holiday.balloons"),
   },
 ];
