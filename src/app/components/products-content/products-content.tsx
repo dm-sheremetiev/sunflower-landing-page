@@ -31,6 +31,7 @@ const validTypes: TypeOfProduct[] = [
   "roses",
   "mixed-box",
   "xxl",
+  "balloons",
 ];
 
 export default function HolidayOffers() {

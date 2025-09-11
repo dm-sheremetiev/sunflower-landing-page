@@ -11,7 +11,7 @@ interface Props {
 
 export const SelectionButtons = ({ selectedType, setSelectedType }: Props) => {
   const { t } = useTranslation();
-
+console.log(selectedType)
   const newTypes = typesOfProduct.map((type) => ({
     ...type,
     title: t(`holiday.${type.typeOfProduct}`),
