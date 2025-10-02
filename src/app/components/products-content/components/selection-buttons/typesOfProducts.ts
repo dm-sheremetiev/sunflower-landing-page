@@ -30,10 +30,10 @@ export const typesOfProduct: ProductType[] = [
     typeOfProduct: "mixed-box",
     title: t("holiday.mixed-box"),
   },
-  {
-    typeOfProduct: "mixed-bucket",
-    title: t("holiday.mixed-bucket"),
-  },
+  // {
+  //   typeOfProduct: "mixed-bucket",
+  //   title: t("holiday.mixed-bucket"),
+  // },
 
   {
     typeOfProduct: "xxl",
